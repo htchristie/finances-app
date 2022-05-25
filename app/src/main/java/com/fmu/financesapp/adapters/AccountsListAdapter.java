@@ -19,8 +19,7 @@ import java.util.ArrayList;
 
 public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapter.MyViewHolder> {
     private final AccountDao dao = new AccountDao();
-    private ArrayList<Account> accountList;
-
+    private final ArrayList<Account> accountList;
     public AccountsListAdapter(ArrayList<Account> accountList){
         this.accountList = accountList;
     }
@@ -53,6 +52,7 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
         double currency  = accountList.get(position).getValue();
         String currencyFormat = dao.formartCurrency(currency);
         holder.accountCategory.setText(category);
+
         formatConditionInformation(holder, typeImg, currencyFormat);
 
     }
@@ -68,11 +68,6 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
             holder.tvCurrency.setText("- "+ currencyFormat);
             holder.tvCurrency.setTextColor(ContextCompat.getColor( holder.itemView.getContext(),R.color.red_500));
         }
-    }
-
-    public void updateData(){
-        accountList.clear();
-        accountList = dao.all();
     }
 
     @Override
