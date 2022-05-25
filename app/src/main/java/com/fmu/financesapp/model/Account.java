@@ -34,12 +34,6 @@ public class Account implements Serializable {
         return value;
     }
 
-    public String formatCurrency(double value) {
-        Locale brazil = new Locale("pt", "BR");
-        NumberFormat brazilFormat = NumberFormat.getCurrencyInstance(brazil);
-        return brazilFormat.format(value);
-    }
-
     public String getCategory() {
         return category;
     }
