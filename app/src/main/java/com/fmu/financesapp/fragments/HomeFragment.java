@@ -3,12 +3,20 @@ package com.fmu.financesapp.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.fmu.financesapp.R;
+import com.fmu.financesapp.dao.AccountDao;
+import com.fmu.financesapp.model.Account;
+import com.fmu.financesapp.adapters.AccountsListAdapter;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +33,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private final AccountDao accountList = new AccountDao();
 
     public HomeFragment() {
         // Required empty public constructor
@@ -51,16 +60,35 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        headerHome(view);
+        listRecycleView(view);
+        return view;
+    }
+
+    private void headerHome(View view) {
+        TextView profitsText = view.findViewById(R.id.tvProfitDisplay);
+        TextView expensivesText = view.findViewById(R.id.tvExpensesDisplay);
+        TextView generalBalance = view.findViewById(R.id.tvBalanceDisplay);
+        profitsText.setText(formatValues(accountList.positiveBalance()));
+        expensivesText.setText(formatValues(accountList.negativeBalance()));
+        generalBalance.setText(formatValues(accountList.generalBalace()));
+    }
+
+    private String formatValues(Double value){
+        return accountList.formartCurrency(value);
+    }
+
+    private void listRecycleView(View view) {
+        RecyclerView rvRecentActivity = view.findViewById(R.id.rvRecentActivity) ;
+        AccountsListAdapter adapter = new AccountsListAdapter(accountList.all());
+        rvRecentActivity.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        rvRecentActivity.setAdapter(adapter);
     }
 }

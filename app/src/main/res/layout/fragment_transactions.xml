@@ -8,100 +8,120 @@
     android:fitsSystemWindows="true"
     tools:context=".fragments.TransactionsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/transactionsToolbar"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/transactions_menu" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvTrMonth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/tr_month"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/transactionsToolbar" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/transactionsToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:menu="@menu/transactions_menu" />
 
-        <ImageView
-            android:id="@+id/trLeftArrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="64dp"
-            android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
-            app:layout_constraintEnd_toStartOf="@+id/tvTrMonth"
-            app:layout_constraintTop_toBottomOf="@+id/transactionsToolbar"
-            android:contentDescription="@string/previous_month" />
+            <TextView
+                android:id="@+id/tvTrMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/tr_month"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/transactionsToolbar" />
 
-        <ImageView
-            android:id="@+id/trRightArrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-            app:layout_constraintStart_toEndOf="@+id/tvTrMonth"
-            app:layout_constraintTop_toBottomOf="@+id/transactionsToolbar"
-            android:contentDescription="@string/next_month" />
+            <ImageView
+                android:id="@+id/trLeftArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="64dp"
+                android:contentDescription="@string/previous_month"
+                android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                app:layout_constraintEnd_toStartOf="@+id/tvTrMonth"
+                app:layout_constraintTop_toBottomOf="@+id/transactionsToolbar" />
 
-        <TextView
-            android:id="@+id/tvTrProfitDisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="56dp"
-            android:text="R$ 3.550,00"
-            android:textColor="@color/green_500"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTrMonth" />
+            <ImageView
+                android:id="@+id/trRightArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/next_month"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                app:layout_constraintStart_toEndOf="@+id/tvTrMonth"
+                app:layout_constraintTop_toBottomOf="@+id/transactionsToolbar" />
 
-        <TextView
-            android:id="@+id/tvTrProfit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="73dp"
-            android:text="@string/profits"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTrProfitDisplay" />
+            <TextView
+                android:id="@+id/tvTrProfitDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="56dp"
+                android:text="R$ 3.550,00"
+                android:textColor="@color/green_500"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTrMonth" />
 
-        <TextView
-            android:id="@+id/tvTrExpensesDisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
-            android:layout_marginEnd="48dp"
-            android:text="R$ 912,91"
-            android:textColor="@color/red_500"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTrMonth" />
+            <TextView
+                android:id="@+id/tvTrProfit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="73dp"
+                android:text="@string/profits"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTrProfitDisplay" />
 
-        <TextView
-            android:id="@+id/tvTrExpenses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="58dp"
-            android:text="@string/expenses"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTrExpensesDisplay" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvTrExpensesDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="48dp"
+                android:text="R$ 912,91"
+                android:textColor="@color/red_500"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTrMonth" />
+
+            <TextView
+                android:id="@+id/tvTrExpenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="58dp"
+                android:text="@string/expenses"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTrExpensesDisplay" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTransactionCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTrProfit"
+                tools:listitem="@layout/transactions_card_w_date_item">
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </FrameLayout>
