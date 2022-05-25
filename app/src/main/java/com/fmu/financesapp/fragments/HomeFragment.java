@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +14,7 @@ import android.widget.TextView;
 
 import com.fmu.financesapp.R;
 import com.fmu.financesapp.dao.AccountDao;
-import com.fmu.financesapp.model.Account;
 import com.fmu.financesapp.adapters.AccountsListAdapter;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,6 +32,9 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private final AccountDao accountList = new AccountDao();
+    private AccountsListAdapter adapter;
+
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -69,7 +70,20 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         headerHome(view);
         listRecycleView(view);
+        SwipeRefreshLayout swipeContainer = view.findViewById(R.id.srlRecentActivity);
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                updateData(swipeContainer);
+            }
+        });
         return view;
+    }
+
+    private void updateData(SwipeRefreshLayout swipe) {
+        adapter.updateData();
+        adapter.notifyDataSetChanged();
+        swipe.setRefreshing(false);
     }
 
     private void headerHome(View view) {
@@ -86,9 +100,10 @@ public class HomeFragment extends Fragment {
     }
 
     private void listRecycleView(View view) {
+        adapter = new AccountsListAdapter(accountList.all());
         RecyclerView rvRecentActivity = view.findViewById(R.id.rvRecentActivity) ;
-        AccountsListAdapter adapter = new AccountsListAdapter(accountList.all());
         rvRecentActivity.setLayoutManager(new LinearLayoutManager(view.getContext()));
         rvRecentActivity.setAdapter(adapter);
+
     }
 }
