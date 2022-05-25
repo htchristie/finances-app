@@ -12,11 +12,13 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fmu.financesapp.R;
+import com.fmu.financesapp.dao.AccountDao;
 import com.fmu.financesapp.model.Account;
 
 import java.util.ArrayList;
 
 public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapter.MyViewHolder> {
+    private final AccountDao dao = new AccountDao();
     private final ArrayList<Account> accountList;
     public AccountsListAdapter(ArrayList<Account> accountList){
         this.accountList = accountList;
@@ -48,7 +50,7 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
         String category  = accountList.get(position).getCategory();
         Boolean typeImg  = accountList.get(position).isType();
         double currency  = accountList.get(position).getValue();
-        String currencyFormat = accountList.get(position).formatCurrency(currency);
+        String currencyFormat = dao.formartCurrency(currency);
         holder.accountCategory.setText(category);
 
         formatConditionInformation(holder, typeImg, currencyFormat);
