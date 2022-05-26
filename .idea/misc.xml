@@ -3,21 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1264988009592326" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/drawable/ic_education.xml" value="0.138" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/activity_main.xml" value="0.24444444444444444" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_planning.xml" value="0.22" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_planning.xml" value="0.2441860465116279" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_statistics.xml" value="0.23222748815165878" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_transactions.xml" value="0.21397379912663755" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/home_recent_activity_item.xml" value="0.33" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/planning_category_item.xml" value="0.33" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/transactions_card_child.xml" value="0.5" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/transactions_card_item.xml" value="0.25" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/transactions_card_parent.xml" value="0.318118948824343" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/transactions_card_w_date_item.xml" value="0.33" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_transactions.xml" value="0.25" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/home_recent_activity_item.xml" value="0.5" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/menu/bottom_nav.xml" value="0.2558139534883721" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/menu/planning_menu.xml" value="0.19895833333333332" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/menu/transactions_menu.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.37873616978742075" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3435066787425991" />
+        <entry key="app/src/main/res/layout/fragment_planning.xml" value="0.25611419677734376" />
+        <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.32382246376811596" />
+        <entry key="app/src/main/res/layout/fragment_transactions.xml" value="0.32382246376811596" />
+        <entry key="app/src/main/res/layout/home_recent_activity_item.xml" value="0.34846343994140627" />
+        <entry key="app/src/main/res/layout/planning_category_item.xml" value="0.3138586956521739" />
+        <entry key="app/src/main/res/layout/transactions_card_child.xml" value="0.3726654052734375" />
+        <entry key="app/src/main/res/layout/transactions_card_item.xml" value="0.40419769287109375" />
+        <entry key="app/src/main/res/layout/transactions_card_parent.xml" value="0.21875" />
+        <entry key="app/src/main/res/layout/transactions_card_w_date_item.xml" value="0.5713729858398438" />
       </map>
     </option>
   </component>

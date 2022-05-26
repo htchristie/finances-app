@@ -13,10 +13,7 @@ import android.widget.TextView;
 
 import com.fmu.financesapp.R;
 import com.fmu.financesapp.dao.AccountDao;
-import com.fmu.financesapp.model.Account;
 import com.fmu.financesapp.adapters.AccountsListAdapter;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
