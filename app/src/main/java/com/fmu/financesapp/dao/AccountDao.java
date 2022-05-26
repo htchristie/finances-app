@@ -4,10 +4,9 @@ import com.fmu.financesapp.model.Account;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
-public class AccountDao {
+public class AccountDao{
     private final static ArrayList<Account> accounts = new ArrayList<>();
     private static int interableId = 1;
 
@@ -45,6 +44,13 @@ public class AccountDao {
         return positive;
     }
 
+    public void filterByMonth(){
+
+    }
+
+    public void filterByCategory(){
+
+    }
 
     public ArrayList<Account> all(){ return new ArrayList<>(accounts);}
 

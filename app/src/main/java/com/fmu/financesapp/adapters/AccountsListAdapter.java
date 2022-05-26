@@ -1,6 +1,5 @@
 package com.fmu.financesapp.adapters;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +34,6 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
             accountCategory = view.findViewById(R.id.tvCategory);
             tvCurrency = view.findViewById(R.id.tvCurrency);
             accountImg = view.findViewById(R.id.imageView3);
-
         }
     }
 
