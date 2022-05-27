@@ -74,12 +74,14 @@
                 android:id="@+id/tvDateCardValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
                 android:layout_marginEnd="16dp"
                 android:text="+ 3200,00"
                 android:textColor="@color/green_500"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/ivDateCardIconBg"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvDateCardDesc"
                 app:layout_constraintTop_toTopOf="@+id/ivDateCardIconBg" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
