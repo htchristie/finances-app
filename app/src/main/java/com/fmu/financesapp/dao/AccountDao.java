@@ -48,8 +48,14 @@ public class AccountDao{
 
     }
 
-    public void filterByCategory(){
-
+    public Double filterByCategory(String category){
+        double value = 0;
+        for (Account account: accounts) {
+            if (account.getCategory() == category) {
+                value += account.getValue();
+            }
+        }
+        return value;
     }
 
     public ArrayList<Account> all(){ return new ArrayList<>(accounts);}
