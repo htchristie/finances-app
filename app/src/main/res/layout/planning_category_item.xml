@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/amber_100"
+        android:backgroundTint="@color/amber_100"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivPlCategoryIcon"
+                tools:ignore="ContentDescription"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_food"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPlCategoryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/food_label"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvPlCategorySpent"
+                app:layout_constraintStart_toEndOf="@+id/ivPlCategoryIcon"
+                app:layout_constraintTop_toTopOf="@+id/ivPlCategoryIcon" />
+
+            <TextView
+                android:id="@+id/tvPlCategorySpent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="R$ 19,99"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPlCategoryIcon"
+                app:layout_constraintStart_toEndOf="@+id/ivPlCategoryIcon"
+                app:layout_constraintTop_toBottomOf="@+id/tvPlCategoryTitle" />
+
+            <TextView
+                android:id="@+id/tvPlCategoryLimit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="/ R$ 250,00"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPlCategorySpent"
+                app:layout_constraintStart_toEndOf="@+id/tvPlCategorySpent" />
+
+            <ImageView
+                android:id="@+id/ivPlCategoryEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/edit"
+                android:src="@drawable/ic_baseline_edit_24"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPlCategoryIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivPlCategoryIcon" />
+
+            <ProgressBar
+                android:id="@+id/pbCategory"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="8"
+                android:progressTint="@color/amber_600"
+                android:progressTintMode="src_in"
+                android:scaleY="3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPlCategoryIcon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
