@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.fmu.financesapp.MainActivity;
 import com.fmu.financesapp.R;
@@ -26,8 +27,6 @@ public class TransactionsFragment extends Fragment {
 
     private final AccountDao accountList = new AccountDao();
     private ArrayList<TransactionParent> transactionParentsList = new ArrayList<>();
-    Toolbar toolbar;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,13 +37,22 @@ public class TransactionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_transactions, container, false);
+        TextView tvTrProfitDisplay = view.findViewById(R.id.tvTrProfitDisplay);
+        TextView tvTrExpensesDisplay = view.findViewById(R.id.tvTrExpensesDisplay);
+        tvTrProfitDisplay.setText(accountList.formartCurrency(accountList.positiveBalance()));
+        tvTrExpensesDisplay.setText(accountList.formartCurrency(accountList.negativeBalance()));
+        initRycle(view);
+        return view;
+
+    }
+
+    private void initRycle(View view) {
         transactionParentsList.add(new TransactionParent("20 de maio", accountList.all()));
-        RecyclerView rvTransactions = view.findViewById(R.id.rvTransactionCard) ;
+        RecyclerView rvTransactions = view.findViewById(R.id.rvTransactionCard);
         TransactionParentAdapter parentAdapter = new TransactionParentAdapter(transactionParentsList);
         rvTransactions.setLayoutManager(new LinearLayoutManager(view.getContext()));
         rvTransactions.setAdapter(parentAdapter);
-        return view;
-
     }
 }
