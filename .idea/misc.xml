@@ -24,6 +24,9 @@
         <entry key="app/src/main/res/layout/transactions_card_item.xml" value="0.40419769287109375" />
         <entry key="app/src/main/res/layout/transactions_card_parent.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/transactions_card_w_date_item.xml" value="0.5713729858398438" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_main.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_planning.xml" value="0.25" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_transactions.xml" value="0.21145833333333333" />
       </map>
     </option>
   </component>
