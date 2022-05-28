@@ -33,7 +33,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_circle_green"
+                app:srcCompat="@drawable/ic_circle_green"
                 tools:ignore="ContentDescription" />
 
             <ImageView
@@ -44,7 +44,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/ivDateCardIconBg"
                 app:layout_constraintStart_toStartOf="@+id/ivDateCardIconBg"
                 app:layout_constraintTop_toTopOf="@+id/ivDateCardIconBg"
-                app:srcCompat="@drawable/ic_baseline_credit_card_24"
+                app:srcCompat="@drawable/ic_credit_card"
                 tools:ignore="ContentDescription" />
 
             <TextView
