@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.FinancesApp" parent="Theme.Material3.Light.NoActionBar">
         <!-- Primary brand color. -->
@@ -11,8 +11,9 @@
         <item name="colorSecondaryVariant">@color/green_500</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="floatingActionButtonStyle">@style/FloatingActionButtonStyle</item>
     </style>
 
     <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
@@ -25,6 +26,14 @@
         <item name="colorOnSurfaceVariant">@color/gray_700</item>
         <item name="colorSecondaryContainer">@color/amber_50</item>
         <item name="colorOnSecondaryContainer">@color/amber_600</item>
+    </style>
+
+    <style name="FloatingActionButtonStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabShapeStyle</item>
+    </style>
+
+    <style name="FabShapeStyle" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">50%</item>
     </style>
 
 </resources>

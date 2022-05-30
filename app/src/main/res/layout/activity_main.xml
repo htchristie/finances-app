@@ -14,22 +14,41 @@
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:navGraph="@navigation/nav_main" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
+        android:background="@color/amber_100"
+        app:itemPaddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/amber_100"
         app:menu="@menu/bottom_nav"
         app:labelVisibilityMode="selected"
-        style="@style/Widget.App.BottomNavigationView"/>
+        style="@style/Widget.App.BottomNavigationView">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:backgroundTint="@color/amber_600"
+        android:clickable="true"
+        android:contentDescription="@string/tr_menu_add"
+        android:focusable="true"
+        android:tint="@color/white"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toTopOf="@id/bottomNavigationView"
+        app:maxImageSize="32dp"
+        app:srcCompat="@drawable/ic_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,9 @@
         android:icon="@drawable/ic_wallet"
         android:id="@+id/navTransactions"/>
     <item
+        android:id="@+id/navPlaceholder"
+        android:title="" />
+    <item
         android:title="@string/nav_statistics"
         android:icon="@drawable/ic_show_chart"
         android:id="@+id/navStatistics"/>
