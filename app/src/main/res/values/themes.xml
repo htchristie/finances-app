@@ -6,10 +6,11 @@
         <item name="colorPrimaryVariant">@color/amber_600</item>
         <item name="colorOnPrimary">@color/black</item>
         <item name="colorContainer">@color/amber_50</item>
+        <item name="colorAccent">@color/amber_400</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/red_500</item>
         <item name="colorSecondaryVariant">@color/green_500</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

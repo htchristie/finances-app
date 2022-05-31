@@ -10,14 +10,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/amber_50"
-        tools:context=".ui.home.HomeActivity">
+        android:background="?attr/colorContainer"
+        tools:context=".ui.home.HomeActivity"
+        tools:ignore="PrivateResource">
 
         <View
             android:id="@+id/header"
             android:layout_width="wrap_content"
             android:layout_height="295dp"
-            android:background="@color/amber_100"
+            android:background="?attr/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +42,7 @@
             android:alpha=".8"
             android:fontFamily="sans-serif"
             android:text="@string/total_balance"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@+id/header"
             app:layout_constraintTop_toTopOf="@+id/header" />
@@ -53,7 +54,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="32dp"
             android:text="R$ 2.457,83"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="@+id/header"
             app:layout_constraintTop_toBottomOf="@+id/tvTotalBalance" />
@@ -66,7 +67,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="63dp"
             android:alpha=".4"
-            android:background="@color/amber_600"
+            android:background="?attr/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvBalanceDisplay" />
@@ -89,6 +90,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
             android:text="@string/profits"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/ivProfits"
             app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -99,7 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="R$ 4.257,31"
-            android:textColor="@color/green_500"
+            android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/ivProfits"
@@ -123,6 +125,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
             android:text="@string/expenses"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/tvExpensesDisplay"
             app:layout_constraintStart_toEndOf="@+id/ivExpenses"
@@ -135,7 +138,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="32dp"
             android:text="R$ 1799,48"
-            android:textColor="@color/red_500"
+            android:textColor="?attr/colorSecondary"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -147,6 +150,7 @@
             android:layout_width="361dp"
             android:layout_height="327dp"
             android:layout_marginTop="115dp"
+            android:backgroundTint="?attr/colorOnSecondary"
             app:cardCornerRadius="15dp"
             app:cardElevation="5dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -166,7 +170,8 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_history"
-                    tools:ignore="ContentDescription,ImageContrastCheck" />
+                    tools:ignore="ContentDescription,ImageContrastCheck"
+                    app:tint="?attr/colorPrimaryVariant" />
 
                 <TextView
                     android:id="@+id/tvRecentActivity"
@@ -175,6 +180,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="28dp"
                     android:text="@string/recent_activity"
+                    android:textColor="?attr/colorOnPrimary"
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -186,13 +192,13 @@
                     android:layout_marginStart="141dp"
                     android:layout_marginTop="28dp"
                     android:layout_marginEnd="16dp"
-                    android:alpha=".8"
+                    android:alpha=".7"
+                    android:contentDescription="@string/hide_numbers"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/tvRecentActivity"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_visibility_off"
-                    android:contentDescription="@string/hide_numbers" />
+                    app:srcCompat="@drawable/ic_visibility_off" />
 
                 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                     android:id="@+id/srlRecentActivity"
@@ -208,25 +214,13 @@
                         android:id="@+id/rvRecentActivity"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        tools:listitem="@layout/home_recent_activity_item" />
+                        tools:listitem="@layout/home_activity_item" />
 
                 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/tvManageAccounts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/manage_accounts"
-            android:textColor="@color/amber_600"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardActivity" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -40,7 +40,7 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
     @NonNull
     @Override
     public AccountsListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_recent_activity_item, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_activity_item, parent, false);
         return new MyViewHolder(itemView);
     }
 

@@ -12,8 +12,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="4dp"
+        android:alpha=".8"
         android:text="24 de maio"
-        android:textColor="@color/gray_700"
+        android:textColor="?attr/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/ivCardParent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/amber_50"
+    android:background="?attr/colorContainer"
     android:fitsSystemWindows="true"
-    tools:context=".fragments.TransactionsFragment">
+    tools:context=".fragments.TransactionsFragment"
+    tools:ignore="PrivateResource">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,7 +35,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:alpha=".9"
                 android:text="@string/tr_month"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="48dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="48dp"
                 android:text="R$ 3.550,00"
                 android:textColor="@color/green_500"
                 android:textSize="20sp"
@@ -80,7 +83,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="73dp"
+                android:alpha=".8"
                 android:text="@string/profits"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTrProfitDisplay" />
@@ -89,7 +94,7 @@
                 android:id="@+id/tvTrExpensesDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginEnd="48dp"
                 android:text="R$ 912,91"
                 android:textColor="@color/red_500"
@@ -103,7 +108,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="58dp"
+                android:alpha=".8"
                 android:text="@string/expenses"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTrExpensesDisplay" />
