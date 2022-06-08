@@ -2,8 +2,6 @@ package com.fmu.financesapp.fragments;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,10 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.fmu.financesapp.MainActivity;
 import com.fmu.financesapp.R;
-import com.fmu.financesapp.adapters.AccountsListAdapter;
-import com.fmu.financesapp.adapters.nestedRecyclerView.TransactionParentAdapter;
+import com.fmu.financesapp.adapters.TransactionRycleAdapters.TransactionParentAdapter;
 import com.fmu.financesapp.dao.AccountDao;
 import com.fmu.financesapp.model.TransactionParent;
 
