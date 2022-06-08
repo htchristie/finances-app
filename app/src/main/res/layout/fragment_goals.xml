@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorContainer"
-    tools:context=".fragments.PlanningFragment"
+    tools:context=".fragments.GoalsFragment"
     tools:ignore="PrivateResource">
 
     <ScrollView
@@ -27,7 +27,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:menu="@menu/planning_menu" />
+                app:menu="@menu/goals_menu" />
 
             <TextView
                 android:id="@+id/tvPlMonth"
@@ -37,7 +37,7 @@
                 android:alpha=".9"
                 android:text="Maio"
                 android:textColor="?attr/colorOnPrimary"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/planningToolbar" />
@@ -46,13 +46,11 @@
                 android:id="@+id/ivPlLeftArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="95dp"
                 android:layout_marginEnd="64dp"
                 android:contentDescription="@string/previous_month"
                 android:src="@drawable/ic_arrow_left"
                 app:layout_constraintBottom_toBottomOf="@+id/tvPlMonth"
                 app:layout_constraintEnd_toStartOf="@+id/tvPlMonth"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tvPlMonth" />
 
             <ImageView
@@ -60,11 +58,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
-                android:layout_marginEnd="95dp"
                 android:contentDescription="@string/next_month"
                 android:src="@drawable/ic_arrow_right"
                 app:layout_constraintBottom_toBottomOf="@+id/tvPlMonth"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvPlMonth"
                 app:layout_constraintTop_toTopOf="@+id/tvPlMonth" />
 
@@ -128,7 +124,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvBudgetDisplay"
-                tools:listitem="@layout/planning_category_item" />
+                tools:listitem="@layout/goals_category_item" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

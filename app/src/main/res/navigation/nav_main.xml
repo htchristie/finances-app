@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_statistics" />
     <fragment
         android:id="@+id/navPlanning"
-        android:name="com.fmu.financesapp.fragments.PlanningFragment"
+        android:name="com.fmu.financesapp.fragments.GoalsFragment"
         android:label="fragment_planning"
-        tools:layout="@layout/fragment_planning" />
+        tools:layout="@layout/fragment_goals" />
 </navigation>

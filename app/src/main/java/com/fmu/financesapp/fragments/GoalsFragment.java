@@ -12,11 +12,11 @@ import android.view.ViewGroup;
 
 import com.fmu.financesapp.R;
 import com.fmu.financesapp.databinding.ActivityMainBinding;
-import com.fmu.financesapp.databinding.FragmentPlanningBinding;
+import com.fmu.financesapp.databinding.FragmentGoalsBinding;
 
-public class PlanningFragment extends Fragment {
+public class GoalsFragment extends Fragment {
 
-    private FragmentPlanningBinding binding;
+    private FragmentGoalsBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class PlanningFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentPlanningBinding.inflate(inflater, container, false);
+        binding = FragmentGoalsBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 

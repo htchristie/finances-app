@@ -3,7 +3,7 @@
     <string name="nav_home">Início</string>
     <string name="nav_transactions">Transações</string>
     <string name="nav_statistics">Estatísticas</string>
-    <string name="nav_planning">Planejamento</string>
+    <string name="nav_goals">Metas</string>
     <string name="total_balance">Saldo Geral</string>
     <string name="profits">Ganhos</string>
     <string name="expenses">Despesas</string>

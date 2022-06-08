@@ -17,7 +17,7 @@
         android:icon="@drawable/ic_show_chart"
         android:id="@+id/navStatistics"/>
     <item
-        android:title="@string/nav_planning"
+        android:title="@string/nav_goals"
         android:icon="@drawable/ic_book"
         android:id="@+id/navPlanning"/>
 </menu>

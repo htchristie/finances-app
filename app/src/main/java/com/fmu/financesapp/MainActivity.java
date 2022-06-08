@@ -5,23 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.fmu.financesapp.adapters.nestedRecyclerView.TransactionParentAdapter;
 import com.fmu.financesapp.dao.AccountDao;
 import com.fmu.financesapp.databinding.ActivityMainBinding;
 import com.fmu.financesapp.fragments.HomeFragment;
-import com.fmu.financesapp.fragments.TransactionsFragment;
 import com.fmu.financesapp.model.Account;
-import com.fmu.financesapp.model.TransactionParent;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding ;
+    private ActivityMainBinding binding;
     private final AccountDao accountList = new AccountDao();
     private NavHostFragment navHostFragment;
     private NavController navController;
@@ -34,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         setMockData();
         initNavigation();
-        initHomeRecyle(savedInstanceState);
+        initHomeRecycle(savedInstanceState);
 
     }
 
-    private void initHomeRecyle(Bundle savedInstanceState) {
+    private void initHomeRecycle(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
