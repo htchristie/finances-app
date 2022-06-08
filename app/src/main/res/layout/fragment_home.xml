@@ -74,12 +74,10 @@
 
         <ImageView
             android:id="@+id/ivProfits"
-            android:layout_width="37dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="@+id/header"
-            app:layout_constraintTop_toBottomOf="@+id/divider"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvProfitDisplay"
+            app:layout_constraintStart_toStartOf="@+id/tvProfitDisplay"
             app:srcCompat="@drawable/ic_trending_up"
             tools:ignore="ContentDescription" />
 
@@ -88,33 +86,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
             android:text="@string/profits"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/ivProfits"
-            app:layout_constraintTop_toBottomOf="@+id/divider" />
+            app:layout_constraintBottom_toTopOf="@+id/tvProfitDisplay"
+            app:layout_constraintStart_toEndOf="@+id/ivProfits" />
 
         <TextView
             android:id="@+id/tvProfitDisplay"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="40dp"
             android:text="R$ 4.257,31"
             android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/ivProfits"
-            app:layout_constraintTop_toBottomOf="@+id/tvProfit" />
+            app:layout_constraintBottom_toTopOf="@+id/cardActivity"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/ivExpenses"
-            android:layout_width="35dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/tvExpenses"
-            app:layout_constraintTop_toBottomOf="@+id/divider"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvExpensesDisplay"
+            app:layout_constraintStart_toStartOf="@+id/tvExpensesDisplay"
             app:srcCompat="@drawable/ic_trending_down"
             tools:ignore="ContentDescription" />
 
@@ -123,27 +119,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
             android:text="@string/expenses"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/tvExpensesDisplay"
-            app:layout_constraintStart_toEndOf="@+id/ivExpenses"
-            app:layout_constraintTop_toBottomOf="@+id/divider" />
+            app:layout_constraintStart_toEndOf="@+id/ivExpenses" />
 
         <TextView
             android:id="@+id/tvExpensesDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="40dp"
             android:text="R$ 1799,48"
             android:textColor="?attr/colorSecondary"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivExpenses"
-            app:layout_constraintTop_toBottomOf="@+id/tvExpenses" />
+            app:layout_constraintBottom_toTopOf="@+id/cardActivity"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardActivity"
@@ -179,31 +172,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="28dp"
+                    android:layout_marginEnd="165dp"
                     android:text="@string/recent_activity"
                     android:textColor="?attr/colorOnPrimary"
                     android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="141dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_marginEnd="16dp"
-                    android:alpha=".7"
-                    android:contentDescription="@string/hide_numbers"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/tvRecentActivity"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_visibility_off" />
-
                 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                     android:id="@+id/srlRecentActivity"
-                    android:layout_width="361dp"
-                    android:layout_height="226dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="235dp"
                     android:layout_marginTop="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

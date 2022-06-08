@@ -72,9 +72,10 @@
                 android:id="@+id/ivPiggybank"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:src="@drawable/ic_piggybank"
+                app:layout_constraintEnd_toStartOf="@+id/tvPlBudget"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvPlMonth"
                 tools:ignore="ContentDescription" />
@@ -98,9 +99,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="R$ 2.087,09"
-                android:textSize="18sp"
                 android:textColor="?attr/colorOnPrimary"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/ivPiggybank"
+                app:layout_constraintEnd_toStartOf="@+id/tvTotalBudgetDisplay"
                 app:layout_constraintStart_toEndOf="@+id/ivPiggybank"
                 app:layout_constraintTop_toBottomOf="@+id/tvPlBudget" />
 
@@ -116,18 +118,6 @@
                 app:layout_constraintBottom_toBottomOf="@+id/tvBudgetDisplay"
                 app:layout_constraintStart_toEndOf="@+id/tvBudgetDisplay"
                 app:layout_constraintTop_toTopOf="@+id/tvBudgetDisplay" />
-
-            <ImageView
-                android:id="@+id/ivPlHide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
-                android:alpha=".7"
-                android:contentDescription="@string/hide_numbers"
-                android:src="@drawable/ic_visibility_off"
-                app:layout_constraintBottom_toBottomOf="@+id/ivPiggybank"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/ivPiggybank" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPlanningCard"
