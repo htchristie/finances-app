@@ -51,40 +51,53 @@
                 android:id="@+id/tvDateCardDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="8dp"
                 android:alpha=".9"
                 android:text="Salário maio"
                 android:textColor="?attr/colorOnPrimary"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/tvDateCardCategory"
+                app:layout_constraintBottom_toBottomOf="@+id/ivDateCardIconBg"
                 app:layout_constraintStart_toEndOf="@+id/ivDateCardIconBg"
-                app:layout_constraintTop_toTopOf="@+id/ivDateCardIconBg" />
+                app:layout_constraintTop_toBottomOf="@+id/tvDateCardCategory" />
 
             <TextView
                 android:id="@+id/tvDateCardCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="8dp"
                 android:alpha=".6"
                 android:text="Salário"
                 android:textColor="?attr/colorOnPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/ivDateCardIconBg"
+                app:layout_constraintBottom_toTopOf="@+id/tvDateCardDesc"
                 app:layout_constraintStart_toEndOf="@+id/ivDateCardIconBg"
-                app:layout_constraintTop_toBottomOf="@+id/tvDateCardDesc" />
+                app:layout_constraintTop_toTopOf="@+id/ivDateCardIconBg" />
 
             <TextView
                 android:id="@+id/tvDateCardValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="130dp"
+                android:layout_marginStart="125dp"
                 android:layout_marginEnd="16dp"
                 android:text="+ 3200,00"
                 android:textColor="@color/green_500"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/ivDateCardIconBg"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDateCardDesc"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvDateCardDesc"
-                app:layout_constraintTop_toTopOf="@+id/ivDateCardIconBg" />
+                app:layout_constraintTop_toBottomOf="@+id/tvDateCardDate" />
+
+            <TextView
+                android:id="@+id/tvDateCardDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:alpha=".6"
+                android:text="24/05/22"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintBottom_toTopOf="@+id/tvDateCardValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvDateCardCategory" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
