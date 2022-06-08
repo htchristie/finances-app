@@ -13,7 +13,7 @@ public class PlanningActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_planning);
+        setContentView(R.layout.fragment_goals);
         initTransActionRecyle(savedInstanceState);
 
     }

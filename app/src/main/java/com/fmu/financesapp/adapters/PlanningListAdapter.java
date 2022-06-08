@@ -45,7 +45,7 @@ public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapte
     @NonNull
     @Override
     public PlanningListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.planning_category_item, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.goals_category_item,parent, false);
         return new MyViewHolder(itemView);
     }
 

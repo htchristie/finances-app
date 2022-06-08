@@ -28,6 +28,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/fragment_planning.xml" value="0.39025573730468754" />
+        <entry key="app/src/main/res/layout/goals_category_item.xml" value="0.7635630289713542" />
         <entry key="app/src/main/res/layout/planning_category_item.xml" value="0.18795166015624998" />
       </map>
     </option>

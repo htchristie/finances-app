@@ -4,13 +4,13 @@
 
     <item
         android:id="@+id/transactionsFilter"
-        android:icon="@drawable/ic_baseline_filter_list_24"
+        android:icon="@drawable/ic_filter"
         android:title="@string/tr_menu_filter"
         app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/transactionsAdd"
-        android:icon="@drawable/ic_baseline_add_24"
+        android:icon="@drawable/ic_add"
         android:title="@string/tr_menu_add"
         app:showAsAction="always"/>
 </menu>

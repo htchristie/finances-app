@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/amber_50"
-    android:backgroundTint="@color/amber_50"
-    tools:context=".fragments.PlanningFragment">
+    android:background="?attr/colorContainer"
+    tools:context=".fragments.GoalsFragment"
+    tools:ignore="PrivateResource">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/materialToolbar"
+                android:id="@+id/planningToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/colorPrimary"
@@ -28,30 +28,30 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:menu="@menu/planning_menu" />
+                app:menu="@menu/goals_menu" />
 
             <TextView
                 android:id="@+id/tvPlMonth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:alpha=".9"
                 android:text="Maio"
-                android:textSize="24sp"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+                app:layout_constraintTop_toBottomOf="@+id/planningToolbar" />
 
             <ImageView
                 android:id="@+id/ivPlLeftArrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="95dp"
                 android:layout_marginEnd="64dp"
                 android:contentDescription="@string/previous_month"
-                android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                android:src="@drawable/ic_arrow_left"
                 app:layout_constraintBottom_toBottomOf="@+id/tvPlMonth"
                 app:layout_constraintEnd_toStartOf="@+id/tvPlMonth"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tvPlMonth" />
 
             <ImageView
@@ -59,11 +59,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
-                android:layout_marginEnd="95dp"
                 android:contentDescription="@string/next_month"
-                android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                android:src="@drawable/ic_arrow_right"
                 app:layout_constraintBottom_toBottomOf="@+id/tvPlMonth"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvPlMonth"
                 app:layout_constraintTop_toTopOf="@+id/tvPlMonth" />
 
@@ -71,9 +69,10 @@
                 android:id="@+id/ivPiggybank"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:src="@drawable/ic_piggybank"
+                app:layout_constraintEnd_toStartOf="@+id/tvPlBudget"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvPlMonth"
                 tools:ignore="ContentDescription" />
@@ -84,7 +83,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="3dp"
+                android:alpha=".8"
                 android:text="@string/remaining_budget"
+                android:textColor="?attr/colorOnPrimary"
                 app:layout_constraintBottom_toTopOf="@+id/tvBudgetDisplay"
                 app:layout_constraintStart_toEndOf="@+id/ivPiggybank"
                 app:layout_constraintTop_toTopOf="@+id/ivPiggybank" />
@@ -95,8 +96,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="R$ 2.087,09"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/ivPiggybank"
+                app:layout_constraintEnd_toStartOf="@+id/tvTotalBudgetDisplay"
                 app:layout_constraintStart_toEndOf="@+id/ivPiggybank"
                 app:layout_constraintTop_toBottomOf="@+id/tvPlBudget" />
 
@@ -105,23 +108,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
+                android:alpha=".6"
                 android:text="/ 3.000,00"
-                android:textColor="@color/gray_700"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tvBudgetDisplay"
                 app:layout_constraintStart_toEndOf="@+id/tvBudgetDisplay"
                 app:layout_constraintTop_toTopOf="@+id/tvBudgetDisplay" />
-
-            <ImageView
-                android:id="@+id/ivPlHide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
-                android:contentDescription="@string/hide_numbers"
-                android:src="@drawable/ic_baseline_visibility_off_24"
-                app:layout_constraintBottom_toBottomOf="@+id/ivPiggybank"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/ivPiggybank" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPlanningCard"
@@ -132,7 +125,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvBudgetDisplay"
-                tools:listitem="@layout/planning_category_item" />
+                tools:listitem="@layout/goals_category_item" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -40,7 +40,7 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
     @NonNull
     @Override
     public AccountsListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_recent_activity_item, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_activity_item, parent, false);
         return new MyViewHolder(itemView);
     }
 
@@ -57,12 +57,12 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
 
     private void formatConditionInformation(@NonNull MyViewHolder holder, Boolean typeImg, String currencyFormat) {
         if (typeImg) {
-            holder.accountImg.setImageResource(R.drawable.ic_baseline_circle_green);
+            holder.accountImg.setImageResource(R.drawable.ic_circle_green);
             holder.tvCurrency.setText("+ "+ currencyFormat);
             holder.tvCurrency.setTextColor(ContextCompat.getColor( holder.itemView.getContext(),R.color.green_500));
 
         } else {
-            holder.accountImg.setImageResource(R.drawable.ic_baseline_circle_red);
+            holder.accountImg.setImageResource(R.drawable.ic_circle_red);
             holder.tvCurrency.setText("- "+ currencyFormat);
             holder.tvCurrency.setTextColor(ContextCompat.getColor( holder.itemView.getContext(),R.color.red_500));
         }

@@ -76,7 +76,7 @@ public class PlanningFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_planning, container, false);
+        View view = inflater.inflate(R.layout.fragment_goals, container, false);
         TextView userBudget = view.findViewById(R.id.tvTotalBudgetDisplay);
         TextView userSpend = view.findViewById(R.id.tvBudgetDisplay);
         userSpend.setText(accountDao.formartCurrency(accountDao.negativeBalance()));
