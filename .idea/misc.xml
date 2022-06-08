@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.19844124700239807" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/drawable/ic_education.xml" value="0.138" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/activity_main.xml" value="0.24444444444444444" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
@@ -24,6 +25,10 @@
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_transactions.xml" value="0.21145833333333333" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/transactions_card_child.xml" value="0.33" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/transactions_card_parent.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21875" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21875" />
+        <entry key="app/src/main/res/layout/fragment_planning.xml" value="0.39025573730468754" />
+        <entry key="app/src/main/res/layout/planning_category_item.xml" value="0.18795166015624998" />
       </map>
     </option>
   </component>

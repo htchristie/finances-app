@@ -3,12 +3,20 @@ package com.fmu.financesapp.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.fmu.financesapp.R;
+import com.fmu.financesapp.adapters.AccountsListAdapter;
+import com.fmu.financesapp.adapters.PlanningListAdapter;
+import com.fmu.financesapp.dao.AccountDao;
+import com.fmu.financesapp.dao.CategoryDao;
+import com.fmu.financesapp.dao.UserDao;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,8 +24,15 @@ import com.fmu.financesapp.R;
  * create an instance of this fragment.
  */
 public class PlanningFragment extends Fragment {
+    private final CategoryDao categoryList = new CategoryDao();
+    private final UserDao userDao = new UserDao();
+    private final AccountDao accountDao = new AccountDao();
 
-    // TODO: Rename parameter arguments, choose names that match
+
+    private PlanningListAdapter adapter;
+
+    // TODO: Rename parameter arguments, ch
+    //  oose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -61,6 +76,20 @@ public class PlanningFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_planning, container, false);
+        View view = inflater.inflate(R.layout.fragment_planning, container, false);
+        TextView userBudget = view.findViewById(R.id.tvTotalBudgetDisplay);
+        TextView userSpend = view.findViewById(R.id.tvBudgetDisplay);
+        userSpend.setText(accountDao.formartCurrency(accountDao.negativeBalance()));
+        userBudget.setText("/ "+accountDao.formartCurrency(userDao.getUserBudget()));
+        initRycleView(view);
+        return view;
     }
+
+    private void initRycleView(View view) {
+        adapter = new PlanningListAdapter(categoryList.all());
+        RecyclerView rvPlanningCard = view.findViewById(R.id.rvPlanningCard) ;
+        rvPlanningCard.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        rvPlanningCard.setAdapter(adapter);
+    }
+
 }
