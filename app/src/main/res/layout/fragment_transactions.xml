@@ -40,28 +40,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/transactionsToolbar" />
 
-        <ImageView
-            android:id="@+id/trLeftArrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="64dp"
-            android:contentDescription="@string/previous_month"
-            android:src="@drawable/ic_arrow_left"
-            app:layout_constraintBottom_toBottomOf="@+id/tvTrMonth"
-            app:layout_constraintEnd_toStartOf="@+id/tvTrMonth"
-            app:layout_constraintTop_toTopOf="@+id/tvTrMonth" />
-
-        <ImageView
-            android:id="@+id/trRightArrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:contentDescription="@string/next_month"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@+id/tvTrMonth"
-            app:layout_constraintStart_toEndOf="@+id/tvTrMonth"
-            app:layout_constraintTop_toTopOf="@+id/tvTrMonth" />
-
         <TextView
             android:id="@+id/tvTrProfitDisplay"
             android:layout_width="wrap_content"
