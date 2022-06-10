@@ -7,6 +7,7 @@
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorContainer">@color/gray_900</item>
         <item name="colorAccent">@color/gray_200</item>
+        <item name="colorSurfaceVariant">?attr/colorPrimary</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/red_500</item>
         <item name="colorSecondaryVariant">@color/green_500</item>

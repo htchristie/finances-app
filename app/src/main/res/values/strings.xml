@@ -26,4 +26,20 @@
     <string name="hide_numbers">Esconder números</string>
     <string name="edit">Editar</string>
     <string name="expenses_by_category">Despesas por categoria</string>
+    <string name="profit_singular">Receita</string>
+    <string name="expense_singular">Despesa</string>
+    <string name="cipher">R$</string>
+    <string name="description">Descrição</string>
+    <string name="category">Categoria…</string>
+    <string name="date">Data</string>
+    <string name="save">Salvar</string>
+
+    <string-array name="categories">
+        <item>Alimentação</item>
+        <item>Educação</item>
+        <item>Mercado</item>
+        <item>Saúde</item>
+        <item>Transporte</item>
+        <item>Outros</item>
+    </string-array>
 </resources>

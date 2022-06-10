@@ -21,6 +21,7 @@
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_add.xml" value="0.1355" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_arrow_left.xml" value="0.1355" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_arrow_right.xml" value="0.1355" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_dot.xml" value="0.1355" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_edit.xml" value="0.1355" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_education.xml" value="0.1355" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_education_outline.xml" value="0.1355" />
@@ -33,9 +34,12 @@
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_transport.xml" value="0.1355" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_transport_outline.xml" value="0.1355" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_visibility_off.xml" value="0.1355" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/transactions_radio_icon.xml" value="0.1355" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/transactions_radio_text.xml" value="0.1355" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_add_goals.xml" value="0.21145833333333333" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_add_planning.xml" value="0.21145833333333333" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_add_transaction.xml" value="0.25" />
-        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_add_transaction.xml" value="0.22" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_goals.xml" value="0.33" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_planning.xml" value="0.25" />
@@ -46,6 +50,7 @@
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/planning_category_item.xml" value="0.5" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/transactions_card_child.xml" value="0.33" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/transactions_card_parent.xml" value="0.22" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/transactions_dropdown_item.xml" value="0.21145833333333333" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/menu/bottom_nav.xml" value="0.25" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/menu/planning_menu.xml" value="0.21145833333333333" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/menu/transactions_menu.xml" value="0.21145833333333333" />
