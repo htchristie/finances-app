@@ -17,41 +17,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/planningToolbar"
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarGoals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:menu="@menu/goals_menu" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tvPlMonth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:alpha=".9"
-                android:text="Maio"
-                android:textColor="?attr/colorOnPrimary"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/planningToolbar" />
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/planningToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    android:theme="?attr/actionBarTheme"
+                    app:title="@string/nav_goals"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:menu="@menu/goals_menu" />
+
+            </com.google.android.material.appbar.AppBarLayout>
 
             <ImageView
                 android:id="@+id/ivPiggybank"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="48dp"
                 android:src="@drawable/ic_piggybank"
                 app:layout_constraintEnd_toStartOf="@+id/tvPlBudget"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPlMonth"
+                app:layout_constraintTop_toBottomOf="@+id/appBarGoals"
                 tools:ignore="ContentDescription" />
 
             <TextView

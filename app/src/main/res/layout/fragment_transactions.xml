@@ -15,43 +15,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/transactionsToolbar"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarTransactions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/transactions_menu" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvTrMonth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:alpha=".9"
-            android:text="@string/tr_month"
-            android:textColor="?attr/colorOnPrimary"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/transactionsToolbar" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/transactionsToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="@string/nav_transactions"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:menu="@menu/transactions_menu" />
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <TextView
             android:id="@+id/tvTrProfitDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="48dp"
             android:text="R$ 3.550,00"
-            android:textColor="@color/green_500"
+            android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTrMonth" />
+            app:layout_constraintTop_toBottomOf="@+id/appBarTransactions" />
 
         <TextView
             android:id="@+id/tvTrProfit"
@@ -69,14 +67,14 @@
             android:id="@+id/tvTrExpensesDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="48dp"
             android:text="R$ 912,91"
             android:textColor="@color/red_500"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTrMonth" />
+            app:layout_constraintTop_toBottomOf="@+id/appBarTransactions" />
 
         <TextView
             android:id="@+id/tvTrExpenses"

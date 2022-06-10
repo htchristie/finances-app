@@ -10,7 +10,7 @@
         <item name="colorSurfaceVariant">?attr/colorPrimary</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/red_500</item>
-        <item name="colorSecondaryVariant">@color/green_500</item>
+        <item name="colorSecondaryVariant">@color/green_600</item>
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>

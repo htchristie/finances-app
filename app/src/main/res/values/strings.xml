@@ -33,6 +33,9 @@
     <string name="category">Categoria…</string>
     <string name="date">Data</string>
     <string name="save">Salvar</string>
+    <string name="add_goal">Adicionar meta</string>
+    <string name="add_transaction">Adicionar transação</string>
+    <string name="filter_transactions">Filtrar transações</string>
 
     <string-array name="categories">
         <item>Alimentação</item>

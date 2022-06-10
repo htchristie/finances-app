@@ -6,5 +6,6 @@
         android:id="@+id/planningAdd"
         android:icon="@drawable/ic_add"
         android:title="@string/tr_menu_add"
+        android:contentDescription="@string/add_goal"
         app:showAsAction="always"/>
 </menu>

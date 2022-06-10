@@ -8,52 +8,60 @@
     tools:context=".AddTransaction"
     tools:ignore="PrivateResource">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarTransactions"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarAddTransaction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="?attr/actionBarTheme"
+            app:title="@string/add_transaction"
+            app:navigationIcon="@drawable/ic_arrow_back" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <RadioGroup
         android:id="@+id/transactionsRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarTransactions">
+        app:layout_constraintTop_toBottomOf="@+id/appBarAddTransaction">
 
         <RadioButton
             android:id="@+id/rbExpenses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:button="@android:color/transparent"
-            android:paddingHorizontal="24dp"
-            android:text="@string/profit_singular"
-            android:textSize="18sp"
-            android:textColor="@drawable/transactions_radio_text"
             android:drawableBottom="@drawable/ic_dot"
             android:drawablePadding="8dp"
-            android:drawableTint="@drawable/transactions_radio_icon"/>
+            android:drawableTint="@drawable/transactions_radio_icon"
+            android:paddingHorizontal="24dp"
+            android:text="@string/profit_singular"
+            android:textColor="@drawable/transactions_radio_text"
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/rbProfits"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:button="@android:color/transparent"
-            android:paddingHorizontal="24dp"
-            android:text="@string/expense_singular"
-            android:textSize="18sp"
-            android:textColor="@drawable/transactions_radio_text"
             android:drawableBottom="@drawable/ic_dot"
             android:drawablePadding="8dp"
-            android:drawableTint="@drawable/transactions_radio_icon"/>
+            android:drawableTint="@drawable/transactions_radio_icon"
+            android:paddingHorizontal="24dp"
+            android:text="@string/expense_singular"
+            android:textColor="@drawable/transactions_radio_text"
+            android:textSize="18sp" />
     </RadioGroup>
 
     <com.google.android.material.textfield.TextInputLayout
