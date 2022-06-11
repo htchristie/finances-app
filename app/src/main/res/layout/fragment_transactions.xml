@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,95 +10,107 @@
     tools:context=".fragments.TransactionsFragment"
     tools:ignore="PrivateResource">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/srlTransActions"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarTransactions"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarTransactions"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/transactionsToolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/transactions_menu"
+            app:title="@string/nav_transactions" />
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/transactionsToolbar"
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarTransactions">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/srlTransactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTrProfitDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="48dp"
+                android:text="R$ 3.550,00"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTrProfit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha=".8"
+                android:text="@string/profits"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvTrProfitDisplay"
+                app:layout_constraintStart_toStartOf="@+id/tvTrProfitDisplay"
+                app:layout_constraintTop_toBottomOf="@+id/tvTrProfitDisplay" />
+
+            <TextView
+                android:id="@+id/tvTrExpensesDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="48dp"
+                android:text="R$ 912,91"
+                android:textColor="@color/red_500"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTrExpenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha=".8"
+                android:text="@string/expenses"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvTrExpensesDisplay"
+                app:layout_constraintStart_toStartOf="@+id/tvTrExpensesDisplay"
+                app:layout_constraintTop_toBottomOf="@+id/tvTrExpensesDisplay" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTransactionCard"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:title="@string/nav_transactions"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="96dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:menu="@menu/transactions_menu" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTrProfit"
+                tools:listitem="@layout/transactions_card_parent" />
 
-        </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
-            android:id="@+id/tvTrProfitDisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="48dp"
-            android:text="R$ 3.550,00"
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarTransactions" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/tvTrProfit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha=".8"
-            android:text="@string/profits"
-            android:textColor="?attr/colorOnPrimary"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/tvTrProfitDisplay"
-            app:layout_constraintStart_toStartOf="@+id/tvTrProfitDisplay"
-            app:layout_constraintTop_toBottomOf="@+id/tvTrProfitDisplay" />
 
-        <TextView
-            android:id="@+id/tvTrExpensesDisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="48dp"
-            android:text="R$ 912,91"
-            android:textColor="@color/red_500"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarTransactions" />
-
-        <TextView
-            android:id="@+id/tvTrExpenses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha=".8"
-            android:text="@string/expenses"
-            android:textColor="?attr/colorOnPrimary"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/tvTrExpensesDisplay"
-            app:layout_constraintStart_toStartOf="@+id/tvTrExpensesDisplay"
-            app:layout_constraintTop_toBottomOf="@+id/tvTrExpensesDisplay" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTransactionCard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTrProfit"
-            tools:listitem="@layout/transactions_card_parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
 
