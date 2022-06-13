@@ -38,6 +38,9 @@
     <string name="filter_transactions">Filtrar transações</string>
     <string name="transaction">Transação</string>
     <string name="goal">Meta</string>
+    <string name="pick">Escolher…</string>
+    <string name="spending_goal">Meta de gastos:</string>
+    <string name="category_">Categoria:</string>
 
     <string-array name="categories">
         <item>Alimentação</item>
