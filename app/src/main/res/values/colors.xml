@@ -12,6 +12,7 @@
     <color name="gray_200">#444444</color>
     <color name="red_500">#F44336</color>
     <color name="green_500">#5CDB8E</color>
+    <color name="green_600">#1BCC61</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

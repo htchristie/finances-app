@@ -6,11 +6,13 @@
         android:id="@+id/transactionsFilter"
         android:icon="@drawable/ic_filter"
         android:title="@string/tr_menu_filter"
+        android:contentDescription="@string/filter_transactions"
         app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/transactionsAdd"
         android:icon="@drawable/ic_add"
         android:title="@string/tr_menu_add"
+        android:contentDescription="@string/add_transaction"
         app:showAsAction="always"/>
 </menu>
