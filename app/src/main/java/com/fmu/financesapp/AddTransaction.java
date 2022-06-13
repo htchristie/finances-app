@@ -1,6 +1,8 @@
 package com.fmu.financesapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +28,14 @@ public class AddTransaction extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityAddTransactionBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+        setContentView(binding.getRoot());
+
+        Toolbar addTransactionToolbar = binding.toolbarTransactions;
+        setSupportActionBar(addTransactionToolbar);
+
+        ActionBar addTransactionActionBar = getSupportActionBar();
+        if (addTransactionActionBar != null) {
+            addTransactionActionBar.setDisplayHomeAsUpEnabled(true);
+        }
     }
 }

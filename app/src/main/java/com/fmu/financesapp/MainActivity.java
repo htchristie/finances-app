@@ -1,5 +1,6 @@
 package com.fmu.financesapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -93,6 +94,16 @@ public class MainActivity extends AppCompatActivity {
         accountList.save(new Account("teste", 1000.0, "Contas", false));
         accountList.save(new Account("teste", 1000.0, "Lanche", false));
         accountList.save(new Account("teste", 1000.0, "Comes", true));
+    }
+
+    public void launchAddTransactionActivity(View view) {
+        Intent intent = new Intent(this, AddTransaction.class);
+        startActivity(intent);
+    }
+
+    public void launchAddGoalActivity(View view) {
+        Intent intent = new Intent(this, AddGoal.class);
+        startActivity(intent);
     }
 }
 
