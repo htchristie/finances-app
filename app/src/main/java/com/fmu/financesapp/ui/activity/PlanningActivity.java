@@ -22,7 +22,7 @@ public class PlanningActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .add(R.id.cPlanningRycle, GoalsFragment.class, null)
+                    .add(R.id.rvPlanningCard, GoalsFragment.class, null)
                     .commit();
         }
     }

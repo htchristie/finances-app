@@ -33,19 +33,25 @@ public class TransactionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.fragment_transactions, container, false);
-        TextView tvTrProfitDisplay = view.findViewById(R.id.tvTrProfitDisplay);
-        TextView tvTrExpensesDisplay = view.findViewById(R.id.tvTrExpensesDisplay);
-        tvTrProfitDisplay.setText(accountList.formartCurrency(accountList.positiveBalance()));
-        tvTrExpensesDisplay.setText(accountList.formartCurrency(accountList.negativeBalance()));
+        setTextData(view);
         initRycle(view);
         return view;
 
     }
 
+    private void setTextData(View view) {
+        TextView tvTrProfitDisplay = view.findViewById(R.id.tvTrProfitDisplay);
+        TextView tvTrExpensesDisplay = view.findViewById(R.id.tvTrExpensesDisplay);
+        tvTrProfitDisplay.setText(accountList.formartCurrency(accountList.positiveBalance()));
+        tvTrExpensesDisplay.setText(accountList.formartCurrency(accountList.negativeBalance()));
+    }
+
     private void initRycle(View view) {
         transactionParentsList.add(new TransactionParent("20 de maio", accountList.all()));
+        transactionParentsList.add(new TransactionParent("21 de maio", accountList.all()));
+        transactionParentsList.add(new TransactionParent("22 de maio", accountList.all()));
+
         RecyclerView rvTransactions = view.findViewById(R.id.rvTransactionCard);
         TransactionParentAdapter parentAdapter = new TransactionParentAdapter(transactionParentsList);
         rvTransactions.setLayoutManager(new LinearLayoutManager(view.getContext()));
