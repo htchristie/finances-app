@@ -3,6 +3,8 @@ package com.fmu.financesapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvTransactions, tvGoals;
     private View overlay;
 
+    private Animation fabOpen, fabClose;
+
     private Boolean isVisible = false;
 
 
@@ -49,15 +53,20 @@ public class MainActivity extends AppCompatActivity {
         tvGoals = binding.tvFabGoal;
         overlay = binding.viewOverlay;
 
+        fabOpen = AnimationUtils.loadAnimation(this, R.anim.fab_open);
+        fabClose = AnimationUtils.loadAnimation(this, R.anim.fab_close);
+
         fabMain.setOnClickListener(view -> {
             if (!isVisible) {
                 showOverlayView();
+                fabMain.startAnimation(fabOpen);
                 fabTransactions.show();
                 tvTransactions.setVisibility(View.VISIBLE);
                 fabGoals.show();
                 tvGoals.setVisibility(View.VISIBLE);
             } else {
                 hideOverlayView();
+                fabMain.startAnimation(fabClose);
                 fabTransactions.hide();
                 tvTransactions.setVisibility(View.GONE);
                 fabGoals.hide();
