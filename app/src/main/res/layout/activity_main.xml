@@ -7,6 +7,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        style="@style/Widget.App.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="?attr/colorPrimary"
+        app:itemPaddingBottom="10dp"
+        app:labelVisibilityMode="selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -19,23 +34,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_main" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+    <View
+        android:id="@+id/viewOverlay"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="?attr/colorPrimary"
-        app:itemPaddingBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav"
-        app:labelVisibilityMode="selected"
-        style="@style/Widget.App.BottomNavigationView">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        android:layout_height="match_parent"
+        android:background="?attr/colorTertiaryContainer"
+        android:alpha="0"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/fabExpand"
         android:layout_width="364dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="45dp"
@@ -51,5 +58,63 @@
         app:layout_constraintTop_toTopOf="@id/bottomNavigationView"
         app:maxImageSize="42dp"
         app:srcCompat="@drawable/ic_add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_transaction"
+        android:visibility="gone"
+        app:backgroundTint="?attr/colorTertiary"
+        app:fabCustomSize="48dp"
+        app:fabSize="auto"
+        app:layout_constraintBottom_toTopOf="@+id/fabExpand"
+        app:layout_constraintEnd_toStartOf="@+id/fabExpand"
+        app:srcCompat="@drawable/ic_card"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/tvFabTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/transaction"
+        android:textColor="?attr/colorOnPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/fabTransaction"
+        app:layout_constraintEnd_toEndOf="@+id/fabTransaction"
+        app:layout_constraintStart_toStartOf="@+id/fabTransaction" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_goal"
+        android:visibility="gone"
+        app:backgroundTint="?attr/colorTertiary"
+        app:fabCustomSize="48dp"
+        app:fabSize="auto"
+        app:layout_constraintBottom_toTopOf="@+id/fabExpand"
+        app:layout_constraintStart_toEndOf="@+id/fabExpand"
+        app:srcCompat="@drawable/ic_add_goal"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/tvFabGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/goal"
+        android:textColor="?attr/colorOnPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/fabGoal"
+        app:layout_constraintEnd_toEndOf="@+id/fabGoal"
+        app:layout_constraintStart_toStartOf="@+id/fabGoal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

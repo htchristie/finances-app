@@ -12,6 +12,9 @@
         <item name="colorSecondary">@color/red_500</item>
         <item name="colorSecondaryVariant">@color/green_600</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="colorTertiary">@color/amber_400</item>
+        <item name="colorTertiaryContainer">@color/white</item>
+        <item name="colorOnTertiary">@color/gray_800</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

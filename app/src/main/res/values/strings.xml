@@ -36,6 +36,8 @@
     <string name="add_goal">Adicionar meta</string>
     <string name="add_transaction">Adicionar transação</string>
     <string name="filter_transactions">Filtrar transações</string>
+    <string name="transaction">Transação</string>
+    <string name="goal">Meta</string>
 
     <string-array name="categories">
         <item>Alimentação</item>
