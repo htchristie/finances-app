@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     private final AccountDao accountList = new AccountDao();
+    private NavHostFragment navHostFragment;
+    private NavController navController;
 
     private FloatingActionButton fabTransactions;
     private FloatingActionButton fabGoals;
@@ -82,18 +84,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initNavigation() {
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
-        assert navHostFragment != null;
-        NavController navController = navHostFragment.getNavController();
+        navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
+        navController = navHostFragment.getNavController();
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
     }
 
-    private void setMockData() {
+    private void setMockData(){
         accountList.save(new Account("teste", 1000.0, "Mercado Açai", false));
         accountList.save(new Account("teste", 1000.0, "Vendas", true));
         accountList.save(new Account("teste", 1000.0, "Contas", false));
         accountList.save(new Account("teste", 1000.0, "Lanche", false));
-        accountList.save(new Account("teste", 1000.0, "Comes", true));
+        accountList.save(new Account("teste", 1000.0, "Comissão", true));
     }
 
     public void launchAddTransactionActivity(View view) {

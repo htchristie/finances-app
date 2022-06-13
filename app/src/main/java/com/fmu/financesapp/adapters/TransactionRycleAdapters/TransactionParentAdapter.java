@@ -1,6 +1,5 @@
-package com.fmu.financesapp.adapters.nestedRecyclerView;
+package com.fmu.financesapp.adapters.TransactionRycleAdapters;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

@@ -15,6 +15,11 @@ public class CategoryDao {
         interableId++;
     }
 
+    public void remove()
+    {
+
+    }
+
 
 
     public ArrayList<Category> all(){ return new ArrayList<>(categories);}

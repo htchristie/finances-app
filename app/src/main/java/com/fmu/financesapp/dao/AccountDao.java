@@ -20,7 +20,6 @@ public class AccountDao{
     public double generalBalace(){
         double negativeValue = negativeBalance();
         double positiveValue = positiveBalance();
-
         return positiveValue - negativeValue;
     }
 
@@ -48,8 +47,14 @@ public class AccountDao{
 
     }
 
-    public void filterByCategory(){
-
+    public Double filterByCategory(String category){
+        double value = 0;
+        for (Account account: accounts) {
+                if(category == account.getCategory() && account.isType() == false){
+                    value+= account.getValue();
+                }
+        }
+        return value;
     }
 
     public ArrayList<Account> all(){ return new ArrayList<>(accounts);}
