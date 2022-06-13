@@ -8,17 +8,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.fmu.financesapp.R;
 import com.fmu.financesapp.fragments.GoalsFragment;
 
-public class PlanningActivity extends AppCompatActivity {
+public class GoalsActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_goals);
-        initTransActionRecyle(savedInstanceState);
+        initGoalRecycle(savedInstanceState);
 
     }
 
-    private void initTransActionRecyle(Bundle savedInstanceState) {
+    private void initGoalRecycle(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
