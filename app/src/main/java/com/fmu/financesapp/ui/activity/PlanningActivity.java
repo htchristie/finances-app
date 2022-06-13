@@ -6,7 +6,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fmu.financesapp.R;
-import com.fmu.financesapp.fragments.PlanningFragment;
+import com.fmu.financesapp.fragments.GoalsFragment;
 
 public class PlanningActivity extends AppCompatActivity {
 
@@ -22,7 +22,7 @@ public class PlanningActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .add(R.id.cPlanningRycle, PlanningFragment.class, null)
+                    .add(R.id.cPlanningRycle, GoalsFragment.class, null)
                     .commit();
         }
     }
