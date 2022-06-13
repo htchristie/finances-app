@@ -123,7 +123,6 @@
                         android:id="@+id/tvStFoodPercentage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="111dp"
                         android:layout_marginEnd="18dp"
                         android:alpha=".8"
                         android:text="2,2%"
@@ -132,7 +131,6 @@
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/ivStFood"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/tvStFood"
                         app:layout_constraintTop_toTopOf="@+id/ivStFood" />
 
                     <View

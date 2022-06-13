@@ -22,11 +22,14 @@
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_add_goal.xml" value="0.21145833333333333" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_add_transaction.xml" value="0.21145833333333333" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_main.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_goals.xml" value="0.21145833333333333" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_home.xml" value="0.21145833333333333" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_planning.xml" value="0.25" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_statistics.xml" value="0.33" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_transactions.xml" value="0.21145833333333333" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/transactions_card_child.xml" value="0.33" />
         <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/transactions_card_parent.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/menu/transactions_menu.xml" value="0.21145833333333333" />
         <entry key="app/src/main/res/layout/activity_add_transaction.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2576518928695344" />
         <entry key="app/src/main/res/layout/fragment_goals.xml" value="0.21822916666666667" />

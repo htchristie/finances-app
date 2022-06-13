@@ -28,7 +28,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/transactions_menu"
             app:title="@string/nav_transactions" />
 
     </com.google.android.material.appbar.AppBarLayout>
