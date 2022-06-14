@@ -13,6 +13,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="?attr/colorPrimary"
+        android:onClick="launchEditGoalActivity"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,14 +25,14 @@
 
             <ImageView
                 android:id="@+id/ivPlCategoryIcon"
-                tools:ignore="ContentDescription"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:src="@drawable/ic_food"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvPlCategoryTitle"
@@ -52,8 +53,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="R$ 19,99"
-                android:textStyle="bold"
                 android:textColor="?attr/colorOnPrimary"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/ivPlCategoryIcon"
                 app:layout_constraintStart_toEndOf="@+id/ivPlCategoryIcon"
                 app:layout_constraintTop_toBottomOf="@+id/tvPlCategoryTitle" />

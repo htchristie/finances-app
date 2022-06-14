@@ -14,15 +14,25 @@
         android:theme="@style/Theme.FinancesApp"
         tools:targetApi="31">
         <activity
-            android:label="@string/add_goal"
-            android:name=".AddGoal"
+            android:name=".EditGoal"
             android:exported="false"
+            android:label="@string/edit_goal"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".EditTransaction"
+            android:exported="false"
+            android:label="@string/edit_transaction"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:label="@string/add_transaction"
+            android:name=".AddGoal"
+            android:exported="false"
+            android:label="@string/add_goal"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".AddTransaction"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:label="@string/add_transaction"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

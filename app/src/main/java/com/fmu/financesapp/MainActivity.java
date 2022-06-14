@@ -123,5 +123,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddGoal.class);
         startActivity(intent);
     }
+
+    public void launchEditGoalActivity(View view) {
+        Intent intent = new Intent(this, EditGoal.class);
+        startActivity(intent);
+    }
+
+    public void launchEditTransactionActivity(View view) {
+        Intent intent = new Intent(this, EditTransaction.class);
+        startActivity(intent);
+    }
 }
 

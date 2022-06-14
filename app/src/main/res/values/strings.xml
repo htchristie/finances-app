@@ -41,6 +41,9 @@
     <string name="pick">Escolher…</string>
     <string name="spending_goal">Meta de gastos:</string>
     <string name="category_">Categoria:</string>
+    <string name="edit_transaction">Editar transação</string>
+    <string name="delete">Excluir</string>
+    <string name="edit_goal">Editar meta</string>
 
     <string-array name="categories">
         <item>Alimentação</item>
