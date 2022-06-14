@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarEditTransaction">
 
         <RadioButton
-            android:id="@+id/rbExpenses"
+            android:id="@+id/rbEditProfit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:button="@android:color/transparent"
@@ -47,10 +47,11 @@
             android:paddingHorizontal="24dp"
             android:text="@string/profit_singular"
             android:textColor="@drawable/transactions_radio_text"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:onClick="onRadioButtonClicked"/>
 
         <RadioButton
-            android:id="@+id/rbProfits"
+            android:id="@+id/rbEditExpense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:button="@android:color/transparent"
@@ -60,7 +61,8 @@
             android:paddingHorizontal="24dp"
             android:text="@string/expense_singular"
             android:textColor="@drawable/transactions_radio_text"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
 
     <com.google.android.material.textfield.TextInputLayout

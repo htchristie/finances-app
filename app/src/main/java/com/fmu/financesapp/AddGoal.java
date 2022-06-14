@@ -18,7 +18,7 @@ public class AddGoal extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        String[] categories = getResources().getStringArray(R.array.categories);
+        String[] categories = getResources().getStringArray(R.array.categories_expense);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.transactions_dropdown_item, categories);
         AutoCompleteTextView autoCompleteTextView = binding.tvGoalCategory;
         autoCompleteTextView.setAdapter(adapter);
