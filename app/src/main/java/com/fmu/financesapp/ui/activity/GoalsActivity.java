@@ -13,7 +13,7 @@ import com.fmu.financesapp.adapters.PlanningListAdapter;
 import com.fmu.financesapp.dao.CategoryDao;
 import com.fmu.financesapp.fragments.GoalsFragment;
 
-public class GoalsActivity extends AppCompatActivity  implements PlanningListAdapter.OnCategoryListener  {
+public class GoalsActivity extends AppCompatActivity {
 
     private CategoryDao categoryDao = new CategoryDao();
     @Override
@@ -31,9 +31,5 @@ public class GoalsActivity extends AppCompatActivity  implements PlanningListAda
                     .add(R.id.rvPlanningCard, GoalsFragment.class, null)
                     .commit();
         }
-    }
-
-    @Override
-    public void onCategoryClick(int position) {
     }
 }

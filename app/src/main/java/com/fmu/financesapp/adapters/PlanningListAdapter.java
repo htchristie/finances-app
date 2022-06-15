@@ -1,61 +1,51 @@
 package com.fmu.financesapp.adapters;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fmu.financesapp.EditGoal;
 import com.fmu.financesapp.R;
 import com.fmu.financesapp.dao.AccountDao;
-import com.fmu.financesapp.dao.CategoryDao;
-import com.fmu.financesapp.model.Account;
+import com.fmu.financesapp.interfaces.GoalRycleInterface;
 import com.fmu.financesapp.model.Category;
 
 import java.util.ArrayList;
 
 public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapter.MyViewHolder> {
     private final AccountDao daoAccount = new AccountDao();
-    private OnCategoryListener onCategoryListener;
-
     private ArrayList<Category> categoryList;
+    private final GoalRycleInterface goalInterface;
 
-    public PlanningListAdapter(ArrayList<Category> categoryList, OnCategoryListener onCategoryListener){
+    public PlanningListAdapter(ArrayList<Category> categoryList, GoalRycleInterface goalInterface){
         this.categoryList = categoryList;
-        this.onCategoryListener = onCategoryListener;
+        this.goalInterface = goalInterface;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MyViewHolder extends RecyclerView.ViewHolder{
         private TextView tvPlCategoryTitle;
         private TextView tvPlCategorySpent;
         private TextView tvPlCategoryBudget;
         private ProgressBar pbCategory;
-        OnCategoryListener onCategoryListener;
 
-        public MyViewHolder(final View view,OnCategoryListener onCategoryListener ){
+        public MyViewHolder(final View view, GoalRycleInterface goalInterface){
             super(view);
             tvPlCategoryTitle = view.findViewById(R.id.tvPlCategoryTitle);
             tvPlCategorySpent = view.findViewById(R.id.tvPlCategorySpent);
             tvPlCategoryBudget = view.findViewById(R.id.tvPlCategoryLimit);
             pbCategory = view.findViewById(R.id.pbCategory);
-            this.onCategoryListener = onCategoryListener;
-            view.setOnClickListener(this);
-        }
 
-        @Override
-        public void onClick(View v) {
-            onCategoryListener.onCategoryClick(getAdapterPosition());
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int ps  = getAdapterPosition();
+                    goalInterface.onItemClick(ps);
+                }
+            });
         }
     }
 
@@ -63,7 +53,7 @@ public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapte
     @Override
     public PlanningListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.goals_category_item,parent, false);
-        return new MyViewHolder(itemView, onCategoryListener);
+        return new MyViewHolder(itemView, goalInterface);
     }
 
     @Override
@@ -81,9 +71,5 @@ public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapte
     @Override
     public int getItemCount() {
         return categoryList.size();
-    }
-
-    public interface OnCategoryListener{
-        void onCategoryClick(int position);
     }
 }
