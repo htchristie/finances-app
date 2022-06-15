@@ -1,15 +1,18 @@
 package com.fmu.financesapp.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.fmu.financesapp.EditGoal;
 import com.fmu.financesapp.R;
 import com.fmu.financesapp.adapters.PlanningListAdapter;
 import com.fmu.financesapp.dao.AccountDao;
@@ -17,16 +20,18 @@ import com.fmu.financesapp.dao.CategoryDao;
 import com.fmu.financesapp.dao.UserDao;
 import com.fmu.financesapp.databinding.FragmentGoalsBinding;
 
-public class GoalsFragment extends Fragment {
+public class GoalsFragment extends Fragment implements PlanningListAdapter.OnCategoryListener {
     private final CategoryDao categoryList = new CategoryDao();
     private final UserDao userDao = new UserDao();
     private final AccountDao accountDao = new AccountDao();
-    private PlanningListAdapter adapter;
+
+    private PlanningListAdapter adapter = new PlanningListAdapter(categoryList.all(), this);
     private FragmentGoalsBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -36,6 +41,7 @@ public class GoalsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_goals, container, false);
         TextView userBudget = view.findViewById(R.id.tvTotalBudgetDisplay);
         TextView userSpend = view.findViewById(R.id.tvBudgetDisplay);
+
         userSpend.setText(accountDao.formartCurrency(accountDao.negativeBalance()));
         userBudget.setText("/ "+accountDao.formartCurrency(userDao.getUserBudget()));
         initRycleView(view);
@@ -43,7 +49,6 @@ public class GoalsFragment extends Fragment {
     }
 
     private void initRycleView(View view) {
-        adapter = new PlanningListAdapter(categoryList.all());
         RecyclerView rvPlanningCard = view.findViewById(R.id.rvPlanningCard) ;
         rvPlanningCard.setLayoutManager(new LinearLayoutManager(view.getContext()));
         rvPlanningCard.setAdapter(adapter);
@@ -55,4 +60,8 @@ public class GoalsFragment extends Fragment {
         binding = null;
     }
 
+    @Override
+    public void onCategoryClick(int position) {
+
+    }
 }

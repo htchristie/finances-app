@@ -14,6 +14,11 @@
         android:theme="@style/Theme.FinancesApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.GoalsActivity"
+            android:exported="false"
+            android:label="goals_activity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".EditGoal"
             android:exported="false"
             android:label="@string/edit_goal"
