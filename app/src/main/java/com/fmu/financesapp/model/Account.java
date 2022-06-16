@@ -11,6 +11,22 @@ public class Account implements Serializable {
     private Double value;
     private String category;
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(boolean type) {
+        this.type = type;
+    }
+
+    public void setValue(Double value) {
+        this.value = value;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public Account(String name, Double value, String category, Boolean type){
         this.name = name;
         this.value = value;

@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setMockData();
         initNavigation();
         initHomeRecycle(savedInstanceState);
 
@@ -102,15 +101,6 @@ public class MainActivity extends AppCompatActivity{
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
     }
 
-    private void setMockData() {
-        accountList.save(new Account("teste", 1000.0, "Alimentação", false));
-        accountList.save(new Account("teste", 1000.0, "Alimentação", true));
-        accountList.save(new Account("teste", 1000.0, "Saúde", false));
-        accountList.save(new Account("teste", 1000.0, "Alimentação", false));
-        accountList.save(new Account("teste", 1000.0, "Contas", true));
-    }
-
-
     public void launchAddTransactionActivity(View view) {
         Intent intent = new Intent(this, AddTransaction.class);
         startActivity(intent);
@@ -121,9 +111,5 @@ public class MainActivity extends AppCompatActivity{
         startActivity(intent);
     }
 
-    public void launchEditTransactionActivity(View view) {
-        Intent intent = new Intent(this, EditTransaction.class);
-        startActivity(intent);
-    }
 }
 

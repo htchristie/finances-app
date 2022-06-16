@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fmu.financesapp.R;
+import com.fmu.financesapp.interfaces.TransactionInterface;
 import com.fmu.financesapp.model.TransactionParent;
 
 import java.util.List;
@@ -17,8 +18,10 @@ import java.util.List;
 public class TransactionParentAdapter extends RecyclerView.Adapter<TransactionParentAdapter.ViewHolder> {
     List<TransactionParent> transactionParentModelList;
     ViewGroup context;
-    public TransactionParentAdapter(List<TransactionParent> transactionParentModelList) {
+    TransactionInterface transactionInterface;
+    public TransactionParentAdapter(List<TransactionParent> transactionParentModelList,  TransactionInterface transactionInterface) {
         this.transactionParentModelList = transactionParentModelList;
+        this.transactionInterface = transactionInterface;
     }
 
     @NonNull
@@ -33,7 +36,7 @@ public class TransactionParentAdapter extends RecyclerView.Adapter<TransactionPa
     public void onBindViewHolder(@NonNull TransactionParentAdapter.ViewHolder holder, int position) {
         holder.tvCardDate.setText(transactionParentModelList.get(position).getDataTitle());
         TransactionChildAdapter transactionChildAdapter;
-        transactionChildAdapter = new TransactionChildAdapter(transactionParentModelList.get(position).getAccountsList(), context.getContext());
+        transactionChildAdapter = new TransactionChildAdapter(transactionParentModelList.get(position).getAccountsList(), transactionInterface, context.getContext());
         holder.ivCardParent.setLayoutManager(new LinearLayoutManager(context.getContext(),LinearLayoutManager.VERTICAL,false));
         holder.ivCardParent.setAdapter(transactionChildAdapter);
         transactionChildAdapter.notifyDataSetChanged();
