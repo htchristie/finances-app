@@ -15,8 +15,12 @@ public class CategoryDao {
         interableId++;
     }
 
-    public void remove()
+    public void remove(Category category )
     {
+        Category categoryFinded = searchCategory(category);
+        if(categoryFinded != null){
+            categories.remove(categoryFinded);
+        }
 
     }
 

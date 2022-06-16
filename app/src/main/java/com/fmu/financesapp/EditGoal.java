@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 import com.fmu.financesapp.dao.CategoryDao;
 import com.fmu.financesapp.databinding.ActivityEditGoalBinding;
@@ -23,8 +25,17 @@ public class EditGoal extends AppCompatActivity{
     private CategoryDao categoryDao = new CategoryDao();
     private EditText goalText;
     private Button btnSave;
+    private View editGoalDelete;
     private AutoCompleteTextView categorie;
     private int id;
+
+    protected void onResume() {
+        super.onResume();
+        String[] categories = getResources().getStringArray(R.array.categories_expense);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.transactions_dropdown_item, categories);
+        AutoCompleteTextView autoCompleteTextView = binding.tvGoalCategory;
+        autoCompleteTextView.setAdapter(adapter);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +44,7 @@ public class EditGoal extends AppCompatActivity{
         setContentView(binding.getRoot());
         getViews();
         fillFieldsToedit();
-        btnClick();
+        setClickMethods();
         initToolbar();
         initAutoCompleteCateogories();
 
@@ -56,20 +67,33 @@ public class EditGoal extends AppCompatActivity{
         goalText = findViewById(R.id.etGoalAmount);
         categorie = findViewById(R.id.tvGoalCategory);
         btnSave = findViewById(R.id.btnEditGoalSave);
+        editGoalDelete = findViewById(R.id.editGoalDelete);
     }
-    private void btnClick() {
+    private void setClickMethods() {
         btnSave.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
                 fillFields();
                 categoryDao.edit(category);
-                Intent intent = new Intent(EditGoal.this,
-                        MainActivity.class);
-                startActivity(intent);
-                finish();
+                goToHomeScreen();
             }
         });
+
+        editGoalDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                categoryDao.remove(category);
+                goToHomeScreen();
+            }
+        });
+    }
+
+    private void goToHomeScreen() {
+        Intent intent = new Intent(EditGoal.this,
+                MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void fillFields() {
@@ -93,5 +117,12 @@ public class EditGoal extends AppCompatActivity{
         if (editGoalEditBar != null) {
             editGoalEditBar.setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.edit_goal_menu, menu);
+        return  super.onCreateOptionsMenu(menu);
     }
 }
