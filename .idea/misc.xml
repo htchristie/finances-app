@@ -29,13 +29,18 @@
         <entry key="app/src/main/res/layout/activity_add_goal.xml" value="0.3161231884057971" />
         <entry key="app/src/main/res/layout/activity_add_transaction.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/activity_edit_goal.xml" value="0.3161231884057971" />
+        <entry key="app/src/main/res/layout/activity_edit_transaction.xml" value="0.26490936279296873" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2576518928695344" />
         <entry key="app/src/main/res/layout/fragment_goals.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/fragment_planning.xml" value="0.39025573730468754" />
+        <entry key="app/src/main/res/layout/fragment_transactions.xml" value="0.10638297872340426" />
         <entry key="app/src/main/res/layout/goals_category_item.xml" value="0.7635630289713542" />
         <entry key="app/src/main/res/layout/planning_category_item.xml" value="0.18795166015624998" />
+        <entry key="app/src/main/res/layout/transactions_card_child.xml" value="0.1" />
         <entry key="app/src/main/res/layout/transactions_card_parent.xml" value="0.21875" />
+        <entry key="app/src/main/res/menu/edit_goal_menu.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/menu/edit_transaction_menu.xml" value="0.337037037037037" />
       </map>
     </option>
   </component>

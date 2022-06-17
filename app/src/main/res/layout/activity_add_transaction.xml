@@ -47,6 +47,8 @@
             android:drawableTint="@drawable/transactions_radio_icon"
             android:paddingHorizontal="24dp"
             android:text="@string/profit_singular"
+
+            android:checked = "true"
             android:textColor="@drawable/transactions_radio_text"
             android:textSize="18sp"
             android:onClick="onRadioButtonClicked"/>

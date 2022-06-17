@@ -20,14 +20,12 @@ import com.fmu.financesapp.model.Category;
 public class AddGoal extends AppCompatActivity {
 
     private ActivityAddGoalBinding binding;
-    private EditText goalText;
-    private Button btnSave;
-    private AutoCompleteTextView categorie;
     private CategoryDao categoryDao = new CategoryDao();
     private Category category = new Category();
 
-
-
+    private EditText goalText;
+    private Button btnSave;
+    private AutoCompleteTextView categorie;
 
     @Override
     protected void onResume() {
@@ -43,20 +41,20 @@ public class AddGoal extends AppCompatActivity {
         btnSave = findViewById(R.id.btnGoalSave);
     }
 
-    private void btnClick() {
-        btnSave.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
+        private void btnClick() {
+            btnSave.setOnClickListener(new View.OnClickListener()
             {
-                fillFields();
-                categoryDao.save(category);
-                Intent intent = new Intent(AddGoal.this,
-                        MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-    }
+                public void onClick(View v)
+                {
+                    fillFields();
+                    categoryDao.save(category);
+                    Intent intent = new Intent(AddGoal.this,
+                            MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+        }
 
     private void fillFields() {
         String categoryName  = categorie.getText().toString();

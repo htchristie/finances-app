@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fmu.financesapp.R;
 import com.fmu.financesapp.dao.AccountDao;
+import com.fmu.financesapp.interfaces.TransactionInterface;
 import com.fmu.financesapp.model.Account;
 
 import java.util.List;
@@ -19,11 +20,12 @@ import java.util.List;
 public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChildAdapter.ViewHolder> {
     List<Account> accounts;
     private final AccountDao dao = new AccountDao();
-
+    private final TransactionInterface transactionInterface;
     Context context;
 
-    public TransactionChildAdapter(List<Account> accounts, Context context) {
+    public TransactionChildAdapter(List<Account> accounts, TransactionInterface transactionInterface, Context context) {
         this.accounts = accounts;
+        this.transactionInterface = transactionInterface;
         this.context = context;
     }
 
@@ -31,7 +33,7 @@ public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChi
     @Override
     public TransactionChildAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.transactions_card_child, null, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, transactionInterface);
     }
 
     @Override
@@ -63,11 +65,19 @@ public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChi
         TextView tvDateCardCategory;
         TextView tvDateCardValue;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView, TransactionInterface transactionInterface) {
             super(itemView);
             tvDateCardDesc = itemView.findViewById(R.id.tvDateCardDesc);
             tvDateCardCategory = itemView.findViewById(R.id.tvDateCardCategory);
             tvDateCardValue = itemView.findViewById(R.id.tvDateCardValue);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int ps = getAdapterPosition();
+                    transactionInterface.onItemClick(ps);
+                }
+            });
         }
     }
 }
