@@ -4,6 +4,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.DatePickerDialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,11 +16,17 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.fmu.financesapp.dao.AccountDao;
 import com.fmu.financesapp.databinding.ActivityEditTransactionBinding;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import com.fmu.financesapp.model.Account;
 
 public class EditTransaction extends AppCompatActivity {
@@ -34,6 +43,9 @@ public class EditTransaction extends AppCompatActivity {
     private Button btnSave;
     private View btnDelete;
 
+    TextInputEditText tvTransactionDate;
+    DatePickerDialog.OnDateSetListener setListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +55,34 @@ public class EditTransaction extends AppCompatActivity {
         getViews();
         initFields();
         setBtnsClicks();
+        initDatePicker();
+    }
+
+    private void initDatePicker() {
+        tvTransactionDate = binding.tvTransactionDate;
+
+        final Calendar calendar = Calendar.getInstance();
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        tvTransactionDate.setOnClickListener(view -> {
+            DatePickerDialog datePickerDialog = new DatePickerDialog(
+                    EditTransaction.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                    setListener, year, month, day);
+            datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            datePickerDialog.show();
+        });
+
+        setListener = (datePicker, year1, month1, day1) -> {
+            month1 = month1 +1;
+            String date = day1 +"/"+ month1 +"/"+ year1;
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            try {
+                tvTransactionDate.setText(sdf.format(sdf.parse(date)));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }        };
     }
 
     private void initFields() {
@@ -56,6 +96,7 @@ public class EditTransaction extends AppCompatActivity {
         amount.setText(Double.toString(account.getValue()));
         description.setText(account.getName());
         category.setText(account.getCategory());
+        date.setText(account.getDate());
         setRadioButton(account.isType());
 
     }
@@ -65,7 +106,6 @@ public class EditTransaction extends AppCompatActivity {
             RadioButton profitRadio = findViewById(R.id.rbEditProfit);
             profitRadio.setChecked(true);
             setProfitAdapter();
-
         }else{
             RadioButton expensiveRadio = findViewById(R.id.rbEditExpense);
             expensiveRadio.setChecked(true);
@@ -81,9 +121,9 @@ public class EditTransaction extends AppCompatActivity {
 
         account.setName(descriptionAccount);
         account.setValue(amountAccount);
-        Log.i("Type", Boolean.toString(type));
         account.setType(type);
         account.setCategory(categoryAccount);
+        account.setDate(dateAccount);
     }
 
     private void setBtnsClicks() {
@@ -115,6 +155,7 @@ public class EditTransaction extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
     private void getViews() {
         amount = findViewById(R.id.etTransactionAmount);
         description = findViewById(R.id.etTransactionDescription);
@@ -122,8 +163,6 @@ public class EditTransaction extends AppCompatActivity {
         date = findViewById(R.id.tvTransactionDate);
         btnSave = findViewById(R.id.btnEditTransactionSave);
         btnDelete = findViewById(R.id.editTransactionDelete);
-
-
     }
 
     private void toolBar() {

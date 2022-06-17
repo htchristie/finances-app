@@ -19,6 +19,8 @@ public class CategoryDao {
     {
         Category categoryFinded = searchCategory(category);
         if(categoryFinded != null){
+            //findedCategory.getId(); ID PARA COLOCAR NO WHERE
+
             categories.remove(categoryFinded);
         }
 
@@ -28,6 +30,8 @@ public class CategoryDao {
 
         Category findedCategory = searchCategory(category);
         if(findedCategory != null){
+            //findedCategory.getId(); ID PARA COLOCAR NO WHERE
+
             int psCategory = categories.indexOf(findedCategory);
             categories.set(psCategory, category);
         }

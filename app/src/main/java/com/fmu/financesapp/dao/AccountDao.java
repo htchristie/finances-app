@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.fmu.financesapp.model.Account;
 import com.fmu.financesapp.model.Category;
+import com.fmu.financesapp.model.TransactionParent;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -46,8 +47,8 @@ public class AccountDao{
         return positive;
     }
 
-    public void filterByMonth(){
-
+    public ArrayList filterByMonth(int month){
+        return new ArrayList();
     }
 
     public Double filterByCategory(String category){
@@ -56,7 +57,6 @@ public class AccountDao{
             if(category.equals(account.getCategory()) && !account.isType()){
                     value+= account.getValue();
                 }
-
         }
         return value;
     }
@@ -70,18 +70,22 @@ public class AccountDao{
     }
 
     public void edit(Account account) {
-        Account findedCategory = searchAccount(account);
-        if(findedCategory != null){
-            int psAccount = accounts.indexOf(findedCategory);
+        Account findedAccount = searchAccount(account);
+        if(findedAccount != null){
+            //findedAccount.getId(); ID PARA COLOCAR NO WHERE
+            int psAccount = accounts.indexOf(findedAccount);
             accounts.set(psAccount, account);
             Log.i("Edit ", "FOI EDITADO");
+
         }
     }
 
     public void remove(Account account )
     {
+
         Account categoryAccount = searchAccount(account);
         if(categoryAccount != null){
+            //findedCategory.getId(); ID PARA COLOCAR NO WHERE
             accounts.remove(categoryAccount);
         }
     }

@@ -53,9 +53,9 @@ public class TransactionsFragment extends Fragment implements TransactionInterfa
     }
 
     private void initRycle(View view) {
-        transactionParentsList.add(new TransactionParent("20 de maio", accountList.all()));
-        transactionParentsList.add(new TransactionParent("21 de maio", accountList.all()));
-        transactionParentsList.add(new TransactionParent("22 de maio", accountList.all()));
+        transactionParentsList.add(new TransactionParent("Junho", accountList.all()));
+        transactionParentsList.add(new TransactionParent("Maio", accountList.all()));
+        transactionParentsList.add(new TransactionParent("Abril", accountList.all()));
 
         RecyclerView rvTransactions = view.findViewById(R.id.rvTransactionCard);
         TransactionParentAdapter parentAdapter = new TransactionParentAdapter(transactionParentsList, this);

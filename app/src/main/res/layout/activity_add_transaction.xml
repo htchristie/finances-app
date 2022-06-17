@@ -147,18 +147,20 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.Material3.TextInputLayout.FilledBox"
         android:id="@+id/tilTransactionDate"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:addStatesFromChildren="true"
+        android:descendantFocusability="blocksDescendants"
         android:hint="@string/date"
+        app:boxStrokeColor="?attr/colorPrimaryVariant"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
         app:hintTextColor="?attr/colorPrimaryVariant"
-        app:boxStrokeColor="?attr/colorPrimaryVariant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilTransactionCategory"
@@ -167,7 +169,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tvTransactionDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="date" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
