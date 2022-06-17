@@ -23,9 +23,7 @@ import com.fmu.financesapp.interfaces.GoalRycleInterface;
 
 public class GoalsFragment extends Fragment implements GoalRycleInterface {
     private final CategoryDao categoryList = new CategoryDao();
-    private final UserDao userDao = new UserDao();
     private final AccountDao accountDao = new AccountDao();
-
     private PlanningListAdapter adapter = new PlanningListAdapter(categoryList.all(), this);
     private FragmentGoalsBinding binding;
 
@@ -44,7 +42,7 @@ public class GoalsFragment extends Fragment implements GoalRycleInterface {
         TextView userSpend = view.findViewById(R.id.tvBudgetDisplay);
 
         userSpend.setText(accountDao.formartCurrency(accountDao.negativeBalance()));
-        userBudget.setText("/ "+accountDao.formartCurrency(userDao.getUserBudget()));
+        userBudget.setText("/ "+accountDao.formartCurrency(categoryList.userBudgetCateories()));
         initRycleView(view);
         return view;
     }
