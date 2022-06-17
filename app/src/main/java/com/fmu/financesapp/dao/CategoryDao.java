@@ -48,8 +48,13 @@ public class CategoryDao {
              return findedCategory;
     }
 
-
     public ArrayList<Category> all(){ return new ArrayList<>(categories);}
 
-
+    public Double userBudgetCateories(){
+        Double value = 0.0;
+                for (Category c: categories){
+                    value += c.getBudget();
+                }
+        return value;
+    }
 }

@@ -1,8 +1,12 @@
 package com.fmu.financesapp.adapters;
 
+import static com.fmu.financesapp.interfaces.GoalRycleInterface.ICONMAP;
+
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -31,6 +35,7 @@ public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapte
         private TextView tvPlCategorySpent;
         private TextView tvPlCategoryBudget;
         private ProgressBar pbCategory;
+        private ImageView ivPlCategoryIcon;
 
         public MyViewHolder(final View view, GoalRycleInterface goalInterface){
             super(view);
@@ -38,6 +43,8 @@ public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapte
             tvPlCategorySpent = view.findViewById(R.id.tvPlCategorySpent);
             tvPlCategoryBudget = view.findViewById(R.id.tvPlCategoryLimit);
             pbCategory = view.findViewById(R.id.pbCategory);
+            ivPlCategoryIcon = view.findViewById(R.id.ivPlCategoryIcon);
+
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -66,6 +73,14 @@ public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapte
         holder.tvPlCategoryBudget.setText(String.valueOf(daoAccount.formartCurrency(categoryBudget)));
         holder.pbCategory.setMax((int ) categoryBudget);
         holder.pbCategory.setProgress((int) categorySpent);
+        try {
+            int id = R.drawable.class.getField(ICONMAP.get(categoryName)).getInt(null);
+            holder.ivPlCategoryIcon.setImageResource(id);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

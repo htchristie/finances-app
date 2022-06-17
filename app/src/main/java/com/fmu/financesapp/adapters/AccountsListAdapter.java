@@ -49,9 +49,8 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
         String category  = accountList.get(position).getCategory();
         Boolean typeImg  = accountList.get(position).isType();
         double currency  = accountList.get(position).getValue();
-        String currencyFormat = dao.formartCurrency(currency);
         holder.accountCategory.setText(category);
-        formatConditionInformation(holder, typeImg, currencyFormat);
+        formatConditionInformation(holder, typeImg, Double.toString(currency));
 
     }
 
