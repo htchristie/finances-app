@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,7 +12,6 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fmu.financesapp.R;
-import com.fmu.financesapp.dao.AccountDao;
 import com.fmu.financesapp.interfaces.TransactionInterface;
 import com.fmu.financesapp.model.Account;
 
@@ -19,7 +19,6 @@ import java.util.List;
 
 public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChildAdapter.ViewHolder> {
     List<Account> accounts;
-    private final AccountDao dao = new AccountDao();
     private final TransactionInterface transactionInterface;
     Context context;
 
@@ -39,19 +38,24 @@ public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChi
     @Override
     public void onBindViewHolder(@NonNull TransactionChildAdapter.ViewHolder holder, int position) {
 
-        Boolean typeImg  = accounts.get(position).isType();
-        holder.tvDateCardCategory.setText(accounts.get(position).getCategory());
-        holder.tvDateCardDesc.setText(accounts.get(position).getName());
+        Account account = accounts.get(position);
+
+        Boolean typeImg  = account.isType();
+        holder.tvDateCardCategory.setText(account.getCategory());
+        holder.tvDateCardDesc.setText(account.getName());
+        holder.tvDateCardDate.setText(account.getDate());
         setType(holder, position, typeImg);
     }
 
     private void setType(@NonNull ViewHolder holder, int position, Boolean typeImg) {
         if (typeImg) {
-            holder.tvDateCardValue.setText("+ "+dao.formartCurrency(accounts.get(position).getValue()));
+            holder.tvDateCardValue.setText("+ "+accounts.get(position).getValue());
             holder.tvDateCardValue.setTextColor(ContextCompat.getColor( holder.itemView.getContext(),R.color.green_500));
+            holder.ivDateCardIconBg.setImageResource(R.drawable.ic_circle_green);
         } else {
-            holder.tvDateCardValue.setText("- "+dao.formartCurrency(accounts.get(position).getValue()));
+            holder.tvDateCardValue.setText("- "+accounts.get(position).getValue());
             holder.tvDateCardValue.setTextColor(ContextCompat.getColor( holder.itemView.getContext(),R.color.red_500));
+            holder.ivDateCardIconBg.setImageResource(R.drawable.ic_circle_red);
         }
     }
 
@@ -64,12 +68,17 @@ public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChi
         TextView tvDateCardDesc;
         TextView tvDateCardCategory;
         TextView tvDateCardValue;
+        TextView tvDateCardDate;
+        ImageView ivDateCardIconBg;
 
         public ViewHolder(@NonNull View itemView, TransactionInterface transactionInterface) {
             super(itemView);
             tvDateCardDesc = itemView.findViewById(R.id.tvDateCardDesc);
             tvDateCardCategory = itemView.findViewById(R.id.tvDateCardCategory);
             tvDateCardValue = itemView.findViewById(R.id.tvDateCardValue);
+            tvDateCardDate = itemView.findViewById(R.id.tvDateCardDate);
+            ivDateCardIconBg = itemView.findViewById(R.id.ivDateCardIconBg);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
