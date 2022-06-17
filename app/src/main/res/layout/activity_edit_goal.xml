@@ -84,6 +84,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
+        android:descendantFocusability="blocksDescendants"
         android:hint="@string/pick"
         app:boxStrokeColor="?attr/colorPrimaryVariant"
         app:hintAnimationEnabled="true"

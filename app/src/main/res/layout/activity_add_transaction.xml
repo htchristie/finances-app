@@ -77,10 +77,11 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/cipher"
+        app:boxStrokeColor="?attr/colorPrimaryVariant"
+        app:counterMaxLength="9"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
         app:hintTextColor="?attr/colorPrimaryVariant"
-        app:boxStrokeColor="?attr/colorPrimaryVariant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transactionsRadioGroup">
@@ -91,22 +92,29 @@
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:inputType="number"
+            android:maxLength="7"
+            android:maxLines="1"
+            android:singleLine="true"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.Material3.TextInputLayout.FilledBox"
         android:id="@+id/tilTransactionDescription"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/description"
+        app:boxStrokeColor="?attr/colorPrimaryVariant"
+        app:counterEnabled="true"
+        app:counterMaxLength="18"
+        app:counterTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:errorEnabled="true"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
         app:hintTextColor="?attr/colorPrimaryVariant"
-        app:boxStrokeColor="?attr/colorPrimaryVariant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilTransactionAmount"
@@ -117,6 +125,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:maxLength="18"
+            android:maxLines="1"
             android:textColor="?attr/colorOnPrimary" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,11 +138,12 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:descendantFocusability="blocksDescendants"
         android:hint="@string/category"
+        app:boxStrokeColor="?attr/colorPrimaryVariant"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
         app:hintTextColor="?attr/colorPrimaryVariant"
-        app:boxStrokeColor="?attr/colorPrimaryVariant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilTransactionDescription"
@@ -143,7 +154,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:inputType="none"/>
+            android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
