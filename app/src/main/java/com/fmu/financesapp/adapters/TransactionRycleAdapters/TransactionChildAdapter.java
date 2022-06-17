@@ -1,5 +1,7 @@
 package com.fmu.financesapp.adapters.TransactionRycleAdapters;
 
+import static com.fmu.financesapp.interfaces.TransactionInterface.ICONMAP;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +46,16 @@ public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChi
         holder.tvDateCardCategory.setText(account.getCategory());
         holder.tvDateCardDesc.setText(account.getName());
         holder.tvDateCardDate.setText(account.getDate());
+        try {
+            int id = R.drawable.class.getField(ICONMAP.get(account.getCategory())).getInt(null);
+            holder.ivDateCardIconFg.setImageResource(id);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
         setType(holder, position, typeImg);
+
     }
 
     private void setType(@NonNull ViewHolder holder, int position, Boolean typeImg) {
@@ -70,6 +81,7 @@ public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChi
         TextView tvDateCardValue;
         TextView tvDateCardDate;
         ImageView ivDateCardIconBg;
+        ImageView ivDateCardIconFg;
 
         public ViewHolder(@NonNull View itemView, TransactionInterface transactionInterface) {
             super(itemView);
@@ -78,6 +90,8 @@ public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChi
             tvDateCardValue = itemView.findViewById(R.id.tvDateCardValue);
             tvDateCardDate = itemView.findViewById(R.id.tvDateCardDate);
             ivDateCardIconBg = itemView.findViewById(R.id.ivDateCardIconBg);
+            ivDateCardIconFg = itemView.findViewById(R.id.ivDateCardIconFg);
+
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
