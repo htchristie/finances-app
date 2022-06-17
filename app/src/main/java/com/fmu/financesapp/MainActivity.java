@@ -2,6 +2,7 @@ package com.fmu.financesapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -12,6 +13,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import com.fmu.financesapp.adapters.PlanningListAdapter;
 import com.fmu.financesapp.dao.AccountDao;
 import com.fmu.financesapp.dao.CategoryDao;
 import com.fmu.financesapp.databinding.ActivityMainBinding;
@@ -20,7 +22,7 @@ import com.fmu.financesapp.model.Account;
 import com.fmu.financesapp.model.Category;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     private ActivityMainBinding binding;
 
     private final CategoryDao category = new CategoryDao();
@@ -42,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setMockData();
-        setCategoryData();
         initNavigation();
         initHomeRecycle(savedInstanceState);
 
@@ -102,17 +103,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setMockData() {
-        accountList.save(new Account("teste", 1000.0, "Lanche", false));
-        accountList.save(new Account("teste", 1000.0, "Lanche", true));
-        accountList.save(new Account("teste", 1000.0, "Contas", false));
-        accountList.save(new Account("teste", 1000.0, "Lanche", false));
+        accountList.save(new Account("teste", 1000.0, "Alimentação", false));
+        accountList.save(new Account("teste", 1000.0, "Alimentação", true));
+        accountList.save(new Account("teste", 1000.0, "Saúde", false));
+        accountList.save(new Account("teste", 1000.0, "Alimentação", false));
         accountList.save(new Account("teste", 1000.0, "Contas", true));
     }
 
-    private void setCategoryData(){
-        category.save(new Category("Contas", 1000.0, "ivPlCategoryIcon"));
-        category.save(new Category("Lanche", 1000.0, "ivPlCategoryIcon"));
-    }
 
     public void launchAddTransactionActivity(View view) {
         Intent intent = new Intent(this, AddTransaction.class);
@@ -121,11 +118,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void launchAddGoalActivity(View view) {
         Intent intent = new Intent(this, AddGoal.class);
-        startActivity(intent);
-    }
-
-    public void launchEditGoalActivity(View view) {
-        Intent intent = new Intent(this, EditGoal.class);
         startActivity(intent);
     }
 

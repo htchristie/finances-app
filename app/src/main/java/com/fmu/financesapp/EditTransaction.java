@@ -69,7 +69,7 @@ public class EditTransaction extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.edit_transaction_menu, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     public void onRadioButtonClicked(View view) {

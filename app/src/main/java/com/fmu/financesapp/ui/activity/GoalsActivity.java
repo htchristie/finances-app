@@ -1,15 +1,21 @@
 package com.fmu.financesapp.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fmu.financesapp.EditGoal;
 import com.fmu.financesapp.R;
+import com.fmu.financesapp.adapters.PlanningListAdapter;
+import com.fmu.financesapp.dao.CategoryDao;
 import com.fmu.financesapp.fragments.GoalsFragment;
 
 public class GoalsActivity extends AppCompatActivity {
 
+    private CategoryDao categoryDao = new CategoryDao();
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

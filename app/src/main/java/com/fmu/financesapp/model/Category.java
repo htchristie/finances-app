@@ -15,12 +15,15 @@ public class Category implements Serializable {
         this.icon = icon;
     }
 
-    public int getId() {
-        return id;
+    public Category() {
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Double getBudget() {
@@ -35,4 +38,11 @@ public class Category implements Serializable {
         this.id = interableId;
     }
 
+    public void setName(String categoryName) {
+        this.name = categoryName;
+    }
+
+    public void setBudget(Double budget) {
+        this.budget = budget;
+    }
 }

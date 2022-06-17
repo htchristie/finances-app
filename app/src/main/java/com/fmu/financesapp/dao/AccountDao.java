@@ -1,5 +1,7 @@
 package com.fmu.financesapp.dao;
 
+import android.util.Log;
+
 import com.fmu.financesapp.model.Account;
 
 import java.text.NumberFormat;
@@ -50,9 +52,10 @@ public class AccountDao{
     public Double filterByCategory(String category){
         double value = 0;
         for (Account account: accounts) {
-                if(category == account.getCategory() && account.isType() == false){
+            if(category.equals(account.getCategory()) && account.isType() == false){
                     value+= account.getValue();
                 }
+
         }
         return value;
     }

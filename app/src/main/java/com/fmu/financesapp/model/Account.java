@@ -18,6 +18,8 @@ public class Account implements Serializable {
         this.type = type;
     }
 
+    public Account(){}
+
     public int getId() {
         return id;
     }
