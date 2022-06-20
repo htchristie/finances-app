@@ -3,7 +3,7 @@
 Aplicativo de controle de finanças para Android, construído em Java.
 
 ### Capturas de tela
--
+- Em breve
 
 ### Prototipagem
 Os protótipos de todas as telas do aplicativo foram desenhados através do programa Figma.<br>
@@ -26,7 +26,7 @@ Os protótipos de todas as telas do aplicativo foram desenhados através do prog
 - View binding
 
 ### Banco de dados
--
+- Em breve
 
 ## Materiais de referência
 - <a href="https://developer.android.com/">Android Developers</a>
