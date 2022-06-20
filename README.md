@@ -6,20 +6,20 @@ Aplicativo de controle de finanças para Android, construído em Java.
 - Em breve
 
 ### Prototipagem
-Os protótipos de todas as telas do aplicativo foram desenhados através do programa Figma.<br>
+Os protótipos de telas do aplicativo foram desenhados através do programa Figma.<br>
 <a href="https://www.figma.com/file/Z3IwaCoM7VECyXX2s67R4I/Finances-App?node-id=4%3A2">Projeto no Figma.</a>
 
 ## Processo de construção
 ### Componentes utilizados
-- Bottom navigation bar
+- Bottom Navigation Bar
 - Cards
-- Floating action button
+- Floating Action Button
 - Fragments
 - Menus
-- Nested recyclerview
+- Nested Recyclerview
 - Recyclerview
-- Text fields
-- Top app bar
+- Text Input Layout
+- Top App Bar
 
 ### Backend
 - Adapters
