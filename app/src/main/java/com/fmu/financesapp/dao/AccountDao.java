@@ -1,5 +1,9 @@
 package com.fmu.financesapp.dao;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.fmu.financesapp.model.Account;
@@ -10,15 +14,55 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class AccountDao{
+public class AccountDao extends SQLiteOpenHelper {
     private final static ArrayList<Account> accounts = new ArrayList<>();
     private static int interableId = 0;
+    private static final int VERSAO_BANCO = 1;
+    private static final String BANCO_CLIENTE = "bd_projeto.db";
+    private static final String TABELA = "Usuarios";
 
+    public AccountDao(Context context) {
+        super(context, BANCO_CLIENTE,null, VERSAO_BANCO);
+    }
+
+
+    void addAccount(Account account){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("valorCompra", account.getName());
+
+        db.insert(TABELA, null, values);
+        db.close();
+    }
+
+    void update(Account account){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("valorCompra", account.getName());
+
+        String argumentos = String.valueOf(account.getId());
+        db.update(TABELA, values, "idaccount" + "=?", new String[]{argumentos});
+        db.close();
+    }
+
+    void delete(Account account) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String argumentos = String.valueOf(account.getId());
+        db.delete(TABELA, "idaccount" + "=?", new String[]{argumentos});
+        db.close();
+    }
 
     public void save(Account account){
         account.setId(interableId);
         accounts.add(account);
         interableId++;
+        addAccount(account);
     }
 
     public double generalBalace(){
@@ -73,6 +117,7 @@ public class AccountDao{
         Account findedAccount = searchAccount(account);
         if(findedAccount != null){
             //findedAccount.getId(); ID PARA COLOCAR NO WHERE
+            update(account);
             int psAccount = accounts.indexOf(findedAccount);
             accounts.set(psAccount, account);
             Log.i("Edit ", "FOI EDITADO");
@@ -86,6 +131,7 @@ public class AccountDao{
         Account categoryAccount = searchAccount(account);
         if(categoryAccount != null){
             //findedCategory.getId(); ID PARA COLOCAR NO WHERE
+            delete(account);
             accounts.remove(categoryAccount);
         }
     }
@@ -98,5 +144,16 @@ public class AccountDao{
             }
         }
         return findedAccount;
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        String sql ="create table account(idcategoria integer,idaccount integer,valorCompra REAL,tipo integer,createdat Date)";
+        db.execSQL(sql);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
     }
 }

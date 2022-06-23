@@ -9,35 +9,27 @@ import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
-
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.fmu.financesapp.dao.AccountDao;
 import com.fmu.financesapp.databinding.ActivityAddTransactionBinding;
 import com.fmu.financesapp.model.Account;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class AddTransaction extends AppCompatActivity {
 
     private ActivityAddTransactionBinding binding;
-    private AccountDao accountDao= new AccountDao();
+    private AccountDao accountDao= new AccountDao(this);
     private Account account = new Account();
     private TextView amount;
     private TextView description;
@@ -49,6 +41,7 @@ public class AddTransaction extends AppCompatActivity {
 
     TextInputEditText tvTransactionDate;
     DatePickerDialog.OnDateSetListener setListener;
+
 
     @Override
     protected void onResume() {

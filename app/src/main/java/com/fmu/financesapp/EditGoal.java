@@ -22,7 +22,7 @@ public class EditGoal extends AppCompatActivity{
 
     private ActivityEditGoalBinding binding;
     private Category category;
-    private CategoryDao categoryDao = new CategoryDao();
+    private CategoryDao categoryDao = new CategoryDao(this);
     private EditText goalText;
     private Button btnSave;
     private View editGoalDelete;

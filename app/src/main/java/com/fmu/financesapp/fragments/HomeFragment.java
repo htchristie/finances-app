@@ -31,7 +31,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private final AccountDao accountList = new AccountDao();
+    private final AccountDao accountList = new AccountDao(getContext());
     private AccountsListAdapter adapter;
 
 
@@ -100,7 +100,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void listRecycleView(View view) {
-        adapter = new AccountsListAdapter(accountList.all());
+        adapter = new AccountsListAdapter(accountList.all(),getContext());
         RecyclerView rvRecentActivity = view.findViewById(R.id.rvRecentActivity) ;
         rvRecentActivity.setLayoutManager(new LinearLayoutManager(view.getContext()));
         rvRecentActivity.setAdapter(adapter);

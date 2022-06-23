@@ -9,14 +9,12 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -32,7 +30,7 @@ import com.fmu.financesapp.model.Account;
 public class EditTransaction extends AppCompatActivity {
 
     private ActivityEditTransactionBinding binding;
-    private AccountDao accountDao = new AccountDao();
+    private AccountDao accountDao = new AccountDao(this);
     private Account account = new Account();
     private int id;
     private TextView amount;

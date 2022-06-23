@@ -1,11 +1,6 @@
 package com.fmu.financesapp.model;
 
-import android.util.Log;
-
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Account implements Serializable {
     private int id = 0;

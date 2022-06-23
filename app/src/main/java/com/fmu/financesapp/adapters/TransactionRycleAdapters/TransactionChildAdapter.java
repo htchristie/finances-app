@@ -32,13 +32,13 @@ public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChi
 
     @NonNull
     @Override
-    public TransactionChildAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.transactions_card_child, parent, false);
         return new ViewHolder(view, transactionInterface);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TransactionChildAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         Account account = accounts.get(position);
 

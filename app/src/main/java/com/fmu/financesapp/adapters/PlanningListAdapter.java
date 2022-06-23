@@ -3,6 +3,7 @@ package com.fmu.financesapp.adapters;
 import static com.fmu.financesapp.interfaces.GoalRycleInterface.ICONMAP;
 
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,13 +22,15 @@ import com.fmu.financesapp.model.Category;
 import java.util.ArrayList;
 
 public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapter.MyViewHolder> {
-    private final AccountDao daoAccount = new AccountDao();
+    private final AccountDao daoAccount = new AccountDao(this.context);
+    private Context context =  null;
     private ArrayList<Category> categoryList;
     private final GoalRycleInterface goalInterface;
 
-    public PlanningListAdapter(ArrayList<Category> categoryList, GoalRycleInterface goalInterface){
+    public PlanningListAdapter(ArrayList<Category> categoryList, GoalRycleInterface goalInterface, Context context){
         this.categoryList = categoryList;
         this.goalInterface = goalInterface;
+        this.context = context;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -58,13 +61,13 @@ public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapte
 
     @NonNull
     @Override
-    public PlanningListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.goals_category_item,parent, false);
         return new MyViewHolder(itemView, goalInterface);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PlanningListAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         String categoryName  = categoryList.get(position).getName();
         double categoryBudget  = categoryList.get(position).getBudget();
         double categorySpent  = daoAccount.filterByCategory(categoryName);

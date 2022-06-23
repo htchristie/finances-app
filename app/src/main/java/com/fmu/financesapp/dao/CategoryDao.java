@@ -1,19 +1,49 @@
 package com.fmu.financesapp.dao;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
 import com.fmu.financesapp.model.Category;
 
 import java.util.ArrayList;
 
-public class CategoryDao {
+public class CategoryDao extends SQLiteOpenHelper {
 
         private final static ArrayList<Category> categories = new ArrayList<>();
         private static int interableId = 0;
+        private static final int VERSAO_BANCO = 1;
+        private static final String BANCO_CLIENTE = "bd_projeto.db";
+        private static final String TABELA = "Categoria";
+
+    public CategoryDao(Context context) {
+        super(context, BANCO_CLIENTE,null, VERSAO_BANCO);
+    }
+
+
+    void addCategoria(Category account){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("nome", account.getName());
+        values.put("budget", account.getBudget());
+
+        db.insert(TABELA, null, values);
+        db.close();
+    }
 
     public void save(Category account){
         account.setId(interableId);
         categories.add(account);
         interableId++;
+        addCategoria(account);
     }
+
+
+
+
 
     public void remove(Category category )
     {
@@ -56,5 +86,15 @@ public class CategoryDao {
                     value += c.getBudget();
                 }
         return value;
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
     }
 }

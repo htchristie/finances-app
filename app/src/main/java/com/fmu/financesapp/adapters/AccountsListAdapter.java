@@ -1,5 +1,6 @@
 package com.fmu.financesapp.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,12 @@ import com.fmu.financesapp.model.Account;
 import java.util.ArrayList;
 
 public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapter.MyViewHolder> {
-    private final AccountDao dao = new AccountDao();
+    private final AccountDao dao = new AccountDao(this.context);
     private ArrayList<Account> accountList;
-
-    public AccountsListAdapter(ArrayList<Account> accountList){
+    private Context context = null;
+    public AccountsListAdapter(ArrayList<Account> accountList, Context context){
         this.accountList = accountList;
+        this.context = context;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -39,13 +41,13 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
 
     @NonNull
     @Override
-    public AccountsListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_activity_item, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AccountsListAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         String category  = accountList.get(position).getCategory();
         Boolean typeImg  = accountList.get(position).isType();
         double currency  = accountList.get(position).getValue();

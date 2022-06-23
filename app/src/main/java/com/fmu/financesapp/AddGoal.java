@@ -14,13 +14,12 @@ import android.widget.EditText;
 
 import com.fmu.financesapp.dao.CategoryDao;
 import com.fmu.financesapp.databinding.ActivityAddGoalBinding;
-import com.fmu.financesapp.fragments.HomeFragment;
 import com.fmu.financesapp.model.Category;
 
 public class AddGoal extends AppCompatActivity {
 
     private ActivityAddGoalBinding binding;
-    private CategoryDao categoryDao = new CategoryDao();
+    private CategoryDao categoryDao = new CategoryDao(this);
     private Category category = new Category();
 
     private EditText goalText;

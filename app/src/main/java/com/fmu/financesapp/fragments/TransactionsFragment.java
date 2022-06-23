@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,7 @@ import java.util.ArrayList;
 
 public class TransactionsFragment extends Fragment implements TransactionInterface {
 
-    private final AccountDao accountList = new AccountDao();
+    private final AccountDao accountList = new AccountDao(getContext());
     private ArrayList<TransactionParent> transactionParentsList = new ArrayList<>();
     @Override
     public void onCreate(Bundle savedInstanceState) {

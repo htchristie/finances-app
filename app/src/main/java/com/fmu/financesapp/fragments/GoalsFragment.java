@@ -22,9 +22,9 @@ import com.fmu.financesapp.databinding.FragmentGoalsBinding;
 import com.fmu.financesapp.interfaces.GoalRycleInterface;
 
 public class GoalsFragment extends Fragment implements GoalRycleInterface {
-    private final CategoryDao categoryList = new CategoryDao();
-    private final AccountDao accountDao = new AccountDao();
-    private PlanningListAdapter adapter = new PlanningListAdapter(categoryList.all(), this);
+    private final CategoryDao categoryList = new CategoryDao(getContext());
+    private final AccountDao accountDao = new AccountDao(getContext());
+    private PlanningListAdapter adapter = new PlanningListAdapter(categoryList.all(), this, getContext());
     private FragmentGoalsBinding binding;
 
     @Override
