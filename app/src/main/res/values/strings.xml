@@ -1,3 +1,61 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">App de Finanças</string>
+    <string name="nav_home">Início</string>
+    <string name="nav_transactions">Transações</string>
+    <string name="nav_statistics">Estatísticas</string>
+    <string name="nav_goals">Metas</string>
+    <string name="total_balance">Saldo Geral</string>
+    <string name="profits">Ganhos</string>
+    <string name="expenses">Despesas</string>
+    <string name="recent_activity">Atividade recente</string>
+    <string name="manage_accounts">Gerenciar contas</string>
+    <string name="ra_category">Mercado</string>
+    <string name="ra_currency">-107,23</string>
+    <string name="tr_menu_filter">Filter</string>
+    <string name="tr_menu_add">Adicionar</string>
+    <string name="tr_month">Maio</string>
+    <string name="remaining_budget">Orçamento restante</string>
+    <string name="food_label">Alimentação</string>
+    <string name="education_label">Educação</string>
+    <string name="market_label">Mercado</string>
+    <string name="health_label">Saúde</string>
+    <string name="transport_label">Transporte</string>
+    <string name="other_label">Outros</string>
+    <string name="previous_month">Mês anterior</string>
+    <string name="next_month">Próximo mês</string>
+    <string name="hide_numbers">Esconder números</string>
+    <string name="edit">Editar</string>
+    <string name="expenses_by_category">Despesas por categoria</string>
+    <string name="profit_singular">Receita</string>
+    <string name="expense_singular">Despesa</string>
+    <string name="cipher">R$</string>
+    <string name="description">Descrição</string>
+    <string name="category">Categoria…</string>
+    <string name="date">Data</string>
+    <string name="save">Salvar</string>
+    <string name="add_goal">Adicionar meta</string>
+    <string name="add_transaction">Adicionar transação</string>
+    <string name="filter_transactions">Filtrar transações</string>
+    <string name="transaction">Transação</string>
+    <string name="goal">Meta</string>
+    <string name="pick">Escolher…</string>
+    <string name="spending_goal">Meta de gastos:</string>
+    <string name="category_">Categoria:</string>
+    <string name="edit_transaction">Editar transação</string>
+    <string name="delete">Excluir</string>
+    <string name="edit_goal">Editar meta</string>
+
+    <string-array name="categories_expense">
+        <item>Alimentação</item>
+        <item>Educação</item>
+        <item>Mercado</item>
+        <item>Saúde</item>
+        <item>Transporte</item>
+        <item>Outros</item>
+    </string-array>
+
+    <string-array name="categories_profit">
+        <item>Salário</item>
+        <item>Outros</item>
+    </string-array>
 </resources>

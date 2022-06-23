@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.19844124700239807" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/drawable/ic_education.xml" value="0.138" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/activity_main.xml" value="0.24444444444444444" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_planning.xml" value="0.22" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_statistics.xml" value="0.23222748815165878" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/fragment_transactions.xml" value="0.21397379912663755" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/home_recent_activity_item.xml" value="0.33" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/planning_category_item.xml" value="0.33" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/transactions_card_child.xml" value="0.5" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/transactions_card_item.xml" value="0.25" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/transactions_card_parent.xml" value="0.318118948824343" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/layout/transactions_card_w_date_item.xml" value="0.33" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/menu/bottom_nav.xml" value="0.2558139534883721" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/menu/planning_menu.xml" value="0.19895833333333332" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/FinancesApp/app/src/main/res/menu/transactions_menu.xml" value="0.2" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/drawable/ic_credit_card.xml" value="0.1" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_add_goal.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_add_transaction.xml" value="0.25" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_edit_goal.xml" value="0.19739583333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_edit_transaction.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/activity_main.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_goals.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_home.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_planning.xml" value="0.25" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_statistics.xml" value="0.33" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/fragment_transactions.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/goals_category_item.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/transactions_card_child.xml" value="0.33" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/layout/transactions_card_parent.xml" value="0.21145833333333333" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/menu/edit_transaction_menu.xml" value="0.18" />
+        <entry key="..\:/Pessoal/Documentos/Estudos/AndroidStudioProjects/finances-app/app/src/main/res/menu/transactions_menu.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/layout/activity_add_transaction.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2576518928695344" />
+        <entry key="app/src/main/res/layout/fragment_goals.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21875" />
+        <entry key="app/src/main/res/layout/fragment_planning.xml" value="0.39025573730468754" />
+        <entry key="app/src/main/res/layout/goals_category_item.xml" value="0.7635630289713542" />
+        <entry key="app/src/main/res/layout/planning_category_item.xml" value="0.18795166015624998" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
