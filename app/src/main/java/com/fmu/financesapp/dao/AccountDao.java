@@ -30,16 +30,9 @@ public class AccountDao extends SQLiteOpenHelper {
     void addAccount(Account account){
 
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
 
-        values.put("idcategoria", account.getCategory());
-        values.put("idaccount", account.getId());
-        values.put("valorCompra", account.getValue());
-        values.put("tipo", account.getId());
-        values.put("createdat", account.getDate());
-
-        db.insert(TABELA, null, values);
-        db.close();
+        String sql = "insert into account values (1,1,0,1,DATE())";
+        db.execSQL(sql);
     }
 
     void update(Account account){
@@ -68,7 +61,7 @@ public class AccountDao extends SQLiteOpenHelper {
         accounts.add(account);
         interableId++;
         SQLiteDatabase db = this.getWritableDatabase();
-        onCreate(db);
+
         addAccount(account);
     }
 

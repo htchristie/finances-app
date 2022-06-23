@@ -26,16 +26,9 @@ public class CategoryDao extends SQLiteOpenHelper {
     void addCategoria(Category account){
 
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
 
-        values.put("idcategoria", account.getId());
-        values.put("nome", account.getName());
-        values.put("budget", account.getBudget());
-        values.put("icon", account.getName());
-
-
-        db.insert(TABELA, null, values);
-        db.close();
+        String sql = "insert into categoria values (1,'teste',0,'')";
+        db.execSQL(sql);
     }
 
     public void save(Category account){
@@ -43,7 +36,7 @@ public class CategoryDao extends SQLiteOpenHelper {
         categories.add(account);
         interableId++;
         SQLiteDatabase db = this.getWritableDatabase();
-        onCreate(db);
+
         addCategoria(account);
     }
 
