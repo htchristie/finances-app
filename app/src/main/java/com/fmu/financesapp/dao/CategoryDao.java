@@ -2,6 +2,7 @@ package com.fmu.financesapp.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -27,8 +28,11 @@ public class CategoryDao extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
+        values.put("idcategoria", account.getId());
         values.put("nome", account.getName());
         values.put("budget", account.getBudget());
+        values.put("icon", account.getName());
+
 
         db.insert(TABELA, null, values);
         db.close();
@@ -38,6 +42,8 @@ public class CategoryDao extends SQLiteOpenHelper {
         account.setId(interableId);
         categories.add(account);
         interableId++;
+        SQLiteDatabase db = this.getWritableDatabase();
+        onCreate(db);
         addCategoria(account);
     }
 
@@ -90,7 +96,12 @@ public class CategoryDao extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        String sql="create table categoria(idcategoria integer,nome TEXT,budget REAL,icon blob)";
+        try {
+            db.execSQL(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

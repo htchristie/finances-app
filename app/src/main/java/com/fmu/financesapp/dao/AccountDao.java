@@ -2,6 +2,7 @@ package com.fmu.financesapp.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -19,7 +20,7 @@ public class AccountDao extends SQLiteOpenHelper {
     private static int interableId = 0;
     private static final int VERSAO_BANCO = 1;
     private static final String BANCO_CLIENTE = "bd_projeto.db";
-    private static final String TABELA = "Usuarios";
+    private static final String TABELA = "account";
 
     public AccountDao(Context context) {
         super(context, BANCO_CLIENTE,null, VERSAO_BANCO);
@@ -31,7 +32,11 @@ public class AccountDao extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put("valorCompra", account.getName());
+        values.put("idcategoria", account.getCategory());
+        values.put("idaccount", account.getId());
+        values.put("valorCompra", account.getValue());
+        values.put("tipo", account.getId());
+        values.put("createdat", account.getDate());
 
         db.insert(TABELA, null, values);
         db.close();
@@ -62,6 +67,8 @@ public class AccountDao extends SQLiteOpenHelper {
         account.setId(interableId);
         accounts.add(account);
         interableId++;
+        SQLiteDatabase db = this.getWritableDatabase();
+        onCreate(db);
         addAccount(account);
     }
 
@@ -148,8 +155,12 @@ public class AccountDao extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql ="create table account(idcategoria integer,idaccount integer,valorCompra REAL,tipo integer,createdat Date)";
-        db.execSQL(sql);
+        String sql="create table account(idcategoria integer,idaccount integer,valorCompra REAL,tipo integer,createdat Date)";
+        try {
+            db.execSQL(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
