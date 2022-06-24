@@ -22,11 +22,14 @@ Os protótipos de telas do aplicativo foram desenhados através do programa Figm
 - Top App Bar
 
 ### Backend
+- Models
 - Adapters
+- Interfaces
 - View binding
 
-### Banco de dados
-- Em breve
+## Implementações futuras
+- [ ] Activity de Estatísticas
+- [ ] Conexão com banco de dados
 
 ## Materiais de referência
 - <a href="https://developer.android.com/">Android Developers</a>
