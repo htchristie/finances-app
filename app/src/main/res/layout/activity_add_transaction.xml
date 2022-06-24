@@ -27,178 +27,193 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <RadioGroup
-        android:id="@+id/transactionsRadioGroup"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:orientation="horizontal"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarAddTransaction">
 
-        <RadioButton
-            android:id="@+id/rbProfit"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:button="@android:color/transparent"
-            android:drawableBottom="@drawable/ic_dot"
-            android:drawablePadding="8dp"
-            android:drawableTint="@drawable/transactions_radio_icon"
-            android:paddingHorizontal="24dp"
-            android:text="@string/profit_singular"
+            android:layout_height="wrap_content">
 
-            android:checked = "true"
-            android:textColor="@drawable/transactions_radio_text"
-            android:textSize="18sp"
-            android:onClick="onRadioButtonClicked"/>
+            <RadioGroup
+                android:id="@+id/transactionsRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
-            android:id="@+id/rbExpense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:button="@android:color/transparent"
-            android:drawableBottom="@drawable/ic_dot"
-            android:drawablePadding="8dp"
-            android:drawableTint="@drawable/transactions_radio_icon"
-            android:paddingHorizontal="24dp"
-            android:text="@string/expense_singular"
-            android:textColor="@drawable/transactions_radio_text"
-            android:textSize="18sp"
-            android:onClick="onRadioButtonClicked"/>
-    </RadioGroup>
+                <RadioButton
+                    android:id="@+id/rbProfit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:button="@android:color/transparent"
+                    android:checked="true"
+                    android:drawableBottom="@drawable/ic_dot"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@drawable/transactions_radio_icon"
+                    android:onClick="onRadioButtonClicked"
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilTransactionAmount"
-        style="@style/Widget.Material3.TextInputLayout.FilledBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/cipher"
-        app:boxStrokeColor="?attr/colorPrimaryVariant"
-        app:counterMaxLength="9"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
-        app:hintTextColor="?attr/colorPrimaryVariant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transactionsRadioGroup">
+                    android:paddingHorizontal="24dp"
+                    android:text="@string/profit_singular"
+                    android:textColor="@drawable/transactions_radio_text"
+                    android:textSize="18sp" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etTransactionAmount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:inputType="number"
-            android:maxLength="7"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+                <RadioButton
+                    android:id="@+id/rbExpense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:button="@android:color/transparent"
+                    android:drawableBottom="@drawable/ic_dot"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@drawable/transactions_radio_icon"
+                    android:onClick="onRadioButtonClicked"
+                    android:paddingHorizontal="24dp"
+                    android:text="@string/expense_singular"
+                    android:textColor="@drawable/transactions_radio_text"
+                    android:textSize="18sp" />
+            </RadioGroup>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilTransactionDescription"
-        style="@style/Widget.Material3.TextInputLayout.FilledBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/description"
-        app:boxStrokeColor="?attr/colorPrimaryVariant"
-        app:counterEnabled="true"
-        app:counterMaxLength="18"
-        app:counterTextAppearance="@style/TextAppearance.AppCompat.Small"
-        app:errorEnabled="true"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
-        app:hintTextColor="?attr/colorPrimaryVariant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilTransactionAmount"
-        app:startIconDrawable="@drawable/ic_description">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTransactionAmount"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="32dp"
+                android:hint="@string/cipher"
+                app:boxStrokeColor="?attr/colorPrimaryVariant"
+                app:counterMaxLength="9"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="?attr/colorPrimaryVariant"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/transactionsRadioGroup">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etTransactionDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:maxLength="18"
-            android:maxLines="1"
-            android:textColor="?attr/colorOnPrimary" />
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTransactionAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:inputType="number"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilTransactionCategory"
-        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:descendantFocusability="blocksDescendants"
-        android:hint="@string/category"
-        app:boxStrokeColor="?attr/colorPrimaryVariant"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
-        app:hintTextColor="?attr/colorPrimaryVariant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilTransactionDescription"
-        app:startIconDrawable="@drawable/ic_category">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTransactionDescription"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="@string/description"
+                app:boxStrokeColor="?attr/colorPrimaryVariant"
+                app:counterEnabled="true"
+                app:counterMaxLength="18"
+                app:counterTextAppearance="@style/TextAppearance.AppCompat.Small"
+                app:errorEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="?attr/colorPrimaryVariant"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilTransactionAmount"
+                app:startIconDrawable="@drawable/ic_description">
 
-        <AutoCompleteTextView
-            android:id="@+id/tvTransactionCategory"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:inputType="none" />
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTransactionDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="18"
+                    android:maxLines="1"
+                    android:textColor="?attr/colorOnPrimary" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilTransactionDate"
-        style="@style/Widget.Material3.TextInputLayout.FilledBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:addStatesFromChildren="true"
-        android:descendantFocusability="blocksDescendants"
-        android:hint="@string/date"
-        app:boxStrokeColor="?attr/colorPrimaryVariant"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
-        app:hintTextColor="?attr/colorPrimaryVariant"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilTransactionCategory"
-        app:startIconDrawable="@drawable/ic_calendar">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTransactionCategory"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:descendantFocusability="blocksDescendants"
+                android:hint="@string/category"
+                app:boxStrokeColor="?attr/colorPrimaryVariant"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="?attr/colorPrimaryVariant"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilTransactionDescription"
+                app:startIconDrawable="@drawable/ic_category">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tvTransactionDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date" />
-    </com.google.android.material.textfield.TextInputLayout>
+                <AutoCompleteTextView
+                    android:id="@+id/tvTransactionCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnTransactionsSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="?attr/colorPrimaryVariant"
-        android:paddingLeft="30dp"
-        android:paddingTop="12dp"
-        android:paddingRight="30dp"
-        android:paddingBottom="12dp"
-        android:text="@string/save"
-        android:textColor="?attr/colorOnPrimary"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilTransactionDate" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTransactionDate"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:addStatesFromChildren="true"
+                android:descendantFocusability="blocksDescendants"
+                android:hint="@string/date"
+                app:boxStrokeColor="?attr/colorPrimaryVariant"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="?attr/colorPrimaryVariant"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilTransactionCategory"
+                app:startIconDrawable="@drawable/ic_calendar">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tvTransactionDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnTransactionsSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:backgroundTint="?attr/colorPrimaryVariant"
+                android:paddingLeft="30dp"
+                android:paddingTop="12dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="12dp"
+                android:text="@string/save"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilTransactionDate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
