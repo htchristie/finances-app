@@ -17,6 +17,8 @@ import com.fmu.financesapp.R;
 import com.fmu.financesapp.adapters.TransactionRecycleAdapters.TransactionParentAdapter;
 import com.fmu.financesapp.dao.AccountDao;
 import com.fmu.financesapp.interfaces.TransactionInterface;
+import com.fmu.financesapp.model.Account;
+import com.fmu.financesapp.model.Month;
 import com.fmu.financesapp.model.TransactionParent;
 
 import java.util.ArrayList;
@@ -49,12 +51,22 @@ public class TransactionsFragment extends Fragment implements TransactionInterfa
     }
 
     private void initRecycle(View view) {
-        transactionParentsList.add(new TransactionParent("Junho", accountList.all()));
+        prepareTransaActionParent();
 
         RecyclerView rvTransactions = view.findViewById(R.id.rvTransactionCard);
         TransactionParentAdapter parentAdapter = new TransactionParentAdapter(transactionParentsList, this);
         rvTransactions.setLayoutManager(new LinearLayoutManager(view.getContext()));
         rvTransactions.setAdapter(parentAdapter);
+    }
+
+    private void prepareTransaActionParent() {
+
+        for (Month m: accountList.allMonths()) {
+                ArrayList<Account> accounts = accountList.filterByMonth(m.getMonthNumber());
+                if(!accounts.isEmpty()){
+                    transactionParentsList.add(new TransactionParent(m.getMonthTitle(), accounts));
+                }
+        }
     }
 
     @Override
