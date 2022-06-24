@@ -28,8 +28,8 @@ Os protótipos de telas do aplicativo foram desenhados através do programa Figm
 - View binding
 
 ## Implementações futuras
-[ ] Activity de Estatísticas
-[ ] Conexão com banco de dados
+- [ ] Activity de Estatísticas
+- [ ] Conexão com banco de dados
 
 ## Materiais de referência
 - <a href="https://developer.android.com/">Android Developers</a>
