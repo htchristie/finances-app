@@ -9,14 +9,12 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -54,7 +52,7 @@ public class EditTransaction extends AppCompatActivity {
         toolBar();
         getViews();
         initFields();
-        setBtnsClicks();
+        setBtnClick();
         initDatePicker();
     }
 
@@ -126,7 +124,7 @@ public class EditTransaction extends AppCompatActivity {
         account.setDate(dateAccount);
     }
 
-    private void setBtnsClicks() {
+    private void setBtnClick() {
         btnSave.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)

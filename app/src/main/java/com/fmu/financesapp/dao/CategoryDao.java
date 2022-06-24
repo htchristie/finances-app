@@ -17,40 +17,40 @@ public class CategoryDao {
 
     public void remove(Category category )
     {
-        Category categoryFinded = searchCategory(category);
-        if(categoryFinded != null){
+        Category categoryFound = searchCategory(category);
+        if(categoryFound != null){
             //findedCategory.getId(); ID PARA COLOCAR NO WHERE
 
-            categories.remove(categoryFinded);
+            categories.remove(categoryFound);
         }
 
     }
 
     public void edit(Category category) {
 
-        Category findedCategory = searchCategory(category);
-        if(findedCategory != null){
-            //findedCategory.getId(); ID PARA COLOCAR NO WHERE
+        Category foundCategory = searchCategory(category);
+        if(foundCategory != null){
+            //foundCategory.getId(); ID PARA COLOCAR NO WHERE
 
-            int psCategory = categories.indexOf(findedCategory);
+            int psCategory = categories.indexOf(foundCategory);
             categories.set(psCategory, category);
         }
 
     }
 
     private Category searchCategory(Category category) {
-             Category findedCategory = null;
+             Category foundCategory = null;
              for(Category c: categories){
                  if(c.getId() == category.getId()){
                      return c;
                  }
              }
-             return findedCategory;
+             return foundCategory;
     }
 
     public ArrayList<Category> all(){ return new ArrayList<>(categories);}
 
-    public Double userBudgetCateories(){
+    public Double userBudgetCategories(){
         Double value = 0.0;
                 for (Category c: categories){
                     value += c.getBudget();

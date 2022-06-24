@@ -12,7 +12,6 @@ public class User implements Serializable {
         this.budget = budget;
     }
 
-
     public String getName() {
         return name;
     }

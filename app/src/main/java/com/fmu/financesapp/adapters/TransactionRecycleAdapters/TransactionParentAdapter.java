@@ -1,4 +1,4 @@
-package com.fmu.financesapp.adapters.TransactionRycleAdapters;
+package com.fmu.financesapp.adapters.TransactionRecycleAdapters;
 
 import android.view.LayoutInflater;
 import android.view.View;

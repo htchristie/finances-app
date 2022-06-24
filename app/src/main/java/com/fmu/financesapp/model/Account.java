@@ -69,7 +69,6 @@ public class Account implements Serializable {
         return category;
     }
 
-
     public void setId(int interableId) {
         this.id = interableId;
     }

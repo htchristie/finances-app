@@ -14,7 +14,6 @@ import android.widget.EditText;
 
 import com.fmu.financesapp.dao.CategoryDao;
 import com.fmu.financesapp.databinding.ActivityAddGoalBinding;
-import com.fmu.financesapp.fragments.HomeFragment;
 import com.fmu.financesapp.model.Category;
 
 public class AddGoal extends AppCompatActivity {
@@ -25,7 +24,7 @@ public class AddGoal extends AppCompatActivity {
 
     private EditText goalText;
     private Button btnSave;
-    private AutoCompleteTextView categorie;
+    private AutoCompleteTextView acCategory;
 
     @Override
     protected void onResume() {
@@ -37,7 +36,7 @@ public class AddGoal extends AppCompatActivity {
 
     private void getViews() {
         goalText = findViewById(R.id.etGoalAmount);
-        categorie = findViewById(R.id.tvGoalCategory);
+        acCategory = findViewById(R.id.tvGoalCategory);
         btnSave = findViewById(R.id.btnGoalSave);
     }
 
@@ -57,7 +56,7 @@ public class AddGoal extends AppCompatActivity {
         }
 
     private void fillFields() {
-        String categoryName  = categorie.getText().toString();
+        String categoryName  = acCategory.getText().toString();
         String budget = goalText.getText().toString();
         Double dbBudget = Double.parseDouble(budget);
         category.setName(categoryName);

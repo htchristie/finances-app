@@ -1,6 +1,6 @@
 package com.fmu.financesapp.adapters;
 
-import static com.fmu.financesapp.interfaces.GoalRycleInterface.ICONMAP;
+import static com.fmu.financesapp.interfaces.GoalRecycleInterface.ICONMAP;
 
 
 import android.view.LayoutInflater;
@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fmu.financesapp.R;
 import com.fmu.financesapp.dao.AccountDao;
-import com.fmu.financesapp.interfaces.GoalRycleInterface;
+import com.fmu.financesapp.interfaces.GoalRecycleInterface;
 import com.fmu.financesapp.model.Category;
 
 import java.util.ArrayList;
@@ -23,9 +23,9 @@ import java.util.ArrayList;
 public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapter.MyViewHolder> {
     private final AccountDao daoAccount = new AccountDao();
     private ArrayList<Category> categoryList;
-    private final GoalRycleInterface goalInterface;
+    private final GoalRecycleInterface goalInterface;
 
-    public PlanningListAdapter(ArrayList<Category> categoryList, GoalRycleInterface goalInterface){
+    public PlanningListAdapter(ArrayList<Category> categoryList, GoalRecycleInterface goalInterface){
         this.categoryList = categoryList;
         this.goalInterface = goalInterface;
     }
@@ -37,7 +37,7 @@ public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapte
         private ProgressBar pbCategory;
         private ImageView ivPlCategoryIcon;
 
-        public MyViewHolder(final View view, GoalRycleInterface goalInterface){
+        public MyViewHolder(final View view, GoalRecycleInterface goalInterface){
             super(view);
             tvPlCategoryTitle = view.findViewById(R.id.tvPlCategoryTitle);
             tvPlCategorySpent = view.findViewById(R.id.tvPlCategorySpent);
@@ -68,9 +68,9 @@ public class PlanningListAdapter extends RecyclerView.Adapter<PlanningListAdapte
         String categoryName  = categoryList.get(position).getName();
         double categoryBudget  = categoryList.get(position).getBudget();
         double categorySpent  = daoAccount.filterByCategory(categoryName);
-        holder.tvPlCategorySpent.setText(String.valueOf(daoAccount.formartCurrency(categorySpent)));
+        holder.tvPlCategorySpent.setText(String.valueOf(daoAccount.formatCurrency(categorySpent)));
         holder.tvPlCategoryTitle.setText(categoryName);
-        holder.tvPlCategoryBudget.setText(String.valueOf(daoAccount.formartCurrency(categoryBudget)));
+        holder.tvPlCategoryBudget.setText(String.valueOf(daoAccount.formatCurrency(categoryBudget)));
         holder.pbCategory.setMax((int ) categoryBudget);
         holder.pbCategory.setProgress((int) categorySpent);
         try {

@@ -1,4 +1,4 @@
-package com.fmu.financesapp.adapters.TransactionRycleAdapters;
+package com.fmu.financesapp.adapters.TransactionRecycleAdapters;
 
 import static com.fmu.financesapp.interfaces.TransactionInterface.ICONMAP;
 
@@ -91,8 +91,6 @@ public class TransactionChildAdapter extends RecyclerView.Adapter<TransactionChi
             tvDateCardDate = itemView.findViewById(R.id.tvDateCardDate);
             ivDateCardIconBg = itemView.findViewById(R.id.ivDateCardIconBg);
             ivDateCardIconFg = itemView.findViewById(R.id.ivDateCardIconFg);
-
-
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -46,7 +46,6 @@ public class AddTransaction extends AppCompatActivity {
     private Boolean type;
     private Button btnSave;
 
-
     TextInputEditText tvTransactionDate;
     DatePickerDialog.OnDateSetListener setListener;
 

@@ -26,7 +26,7 @@ public class EditGoal extends AppCompatActivity{
     private EditText goalText;
     private Button btnSave;
     private View editGoalDelete;
-    private AutoCompleteTextView categorie;
+    private AutoCompleteTextView acCategory;
     private int id;
 
     protected void onResume() {
@@ -47,8 +47,6 @@ public class EditGoal extends AppCompatActivity{
         setClickMethods();
         initToolbar();
         initAutoCompleteCateogories();
-
-
     }
 
     private void fillFieldsToedit() {
@@ -60,15 +58,16 @@ public class EditGoal extends AppCompatActivity{
                 }
         }
         goalText.setText(Double.toString(category.getBudget()));
-        categorie.setText(category.getName());
+        acCategory.setText(category.getName());
     }
 
     private void getViews() {
         goalText = findViewById(R.id.etGoalAmount);
-        categorie = findViewById(R.id.tvGoalCategory);
+        acCategory = findViewById(R.id.tvGoalCategory);
         btnSave = findViewById(R.id.btnEditGoalSave);
         editGoalDelete = findViewById(R.id.editGoalDelete);
     }
+
     private void setClickMethods() {
         btnSave.setOnClickListener(new View.OnClickListener()
         {
@@ -97,18 +96,20 @@ public class EditGoal extends AppCompatActivity{
     }
 
     private void fillFields() {
-        String categoryName  = categorie.getText().toString();
+        String categoryName  = acCategory.getText().toString();
         String budget = goalText.getText().toString();
         Double dbBudget = Double.parseDouble(budget);
         category.setName(categoryName);
         category.setBudget(dbBudget);
     }
+
     private void initAutoCompleteCateogories() {
         String[] categories = getResources().getStringArray(R.array.categories_expense);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.transactions_dropdown_item, categories);
         AutoCompleteTextView autoCompleteTextView = binding.tvGoalCategory;
         autoCompleteTextView.setAdapter(adapter);
     }
+
     private void initToolbar() {
         Toolbar editGoalToolbar = binding.toolbarAddGoal;
         setSupportActionBar(editGoalToolbar);

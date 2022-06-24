@@ -11,17 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.fmu.financesapp.AddGoal;
 import com.fmu.financesapp.EditGoal;
 import com.fmu.financesapp.R;
 import com.fmu.financesapp.adapters.PlanningListAdapter;
 import com.fmu.financesapp.dao.AccountDao;
 import com.fmu.financesapp.dao.CategoryDao;
-import com.fmu.financesapp.dao.UserDao;
 import com.fmu.financesapp.databinding.FragmentGoalsBinding;
-import com.fmu.financesapp.interfaces.GoalRycleInterface;
+import com.fmu.financesapp.interfaces.GoalRecycleInterface;
 
-public class GoalsFragment extends Fragment implements GoalRycleInterface {
+public class GoalsFragment extends Fragment implements GoalRecycleInterface {
     private final CategoryDao categoryList = new CategoryDao();
     private final AccountDao accountDao = new AccountDao();
     private PlanningListAdapter adapter = new PlanningListAdapter(categoryList.all(), this);
@@ -41,13 +39,13 @@ public class GoalsFragment extends Fragment implements GoalRycleInterface {
         TextView userBudget = view.findViewById(R.id.tvTotalBudgetDisplay);
         TextView userSpend = view.findViewById(R.id.tvBudgetDisplay);
 
-        userSpend.setText(accountDao.formartCurrency(accountDao.negativeBalance()));
-        userBudget.setText("/ "+accountDao.formartCurrency(categoryList.userBudgetCateories()));
-        initRycleView(view);
+        userSpend.setText(accountDao.formatCurrency(accountDao.negativeBalance()));
+        userBudget.setText("/ "+accountDao.formatCurrency(categoryList.userBudgetCategories()));
+        initRecycleView(view);
         return view;
     }
 
-    private void initRycleView(View view) {
+    private void initRecycleView(View view) {
         RecyclerView rvPlanningCard = view.findViewById(R.id.rvPlanningCard) ;
         rvPlanningCard.setLayoutManager(new LinearLayoutManager(view.getContext()));
         rvPlanningCard.setAdapter(adapter);

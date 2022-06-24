@@ -7,16 +7,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.fmu.financesapp.EditGoal;
 import com.fmu.financesapp.EditTransaction;
 import com.fmu.financesapp.R;
-import com.fmu.financesapp.adapters.TransactionRycleAdapters.TransactionParentAdapter;
+import com.fmu.financesapp.adapters.TransactionRecycleAdapters.TransactionParentAdapter;
 import com.fmu.financesapp.dao.AccountDao;
 import com.fmu.financesapp.interfaces.TransactionInterface;
 import com.fmu.financesapp.model.TransactionParent;
@@ -31,7 +29,6 @@ public class TransactionsFragment extends Fragment implements TransactionInterfa
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -40,22 +37,19 @@ public class TransactionsFragment extends Fragment implements TransactionInterfa
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_transactions, container, false);
         setTextData(view);
-        initRycle(view);
+        initRecycle(view);
         return view;
-
     }
 
     private void setTextData(View view) {
         TextView tvTrProfitDisplay = view.findViewById(R.id.tvTrProfitDisplay);
         TextView tvTrExpensesDisplay = view.findViewById(R.id.tvTrExpensesDisplay);
-        tvTrProfitDisplay.setText(accountList.formartCurrency(accountList.positiveBalance()));
-        tvTrExpensesDisplay.setText(accountList.formartCurrency(accountList.negativeBalance()));
+        tvTrProfitDisplay.setText(accountList.formatCurrency(accountList.positiveBalance()));
+        tvTrExpensesDisplay.setText(accountList.formatCurrency(accountList.negativeBalance()));
     }
 
-    private void initRycle(View view) {
+    private void initRecycle(View view) {
         transactionParentsList.add(new TransactionParent("Junho", accountList.all()));
-        transactionParentsList.add(new TransactionParent("Maio", accountList.all()));
-        transactionParentsList.add(new TransactionParent("Abril", accountList.all()));
 
         RecyclerView rvTransactions = view.findViewById(R.id.rvTransactionCard);
         TransactionParentAdapter parentAdapter = new TransactionParentAdapter(transactionParentsList, this);

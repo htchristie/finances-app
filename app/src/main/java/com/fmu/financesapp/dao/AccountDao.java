@@ -14,14 +14,13 @@ public class AccountDao{
     private final static ArrayList<Account> accounts = new ArrayList<>();
     private static int interableId = 0;
 
-
     public void save(Account account){
         account.setId(interableId);
         accounts.add(account);
         interableId++;
     }
 
-    public double generalBalace(){
+    public double generalBalance(){
         double negativeValue = negativeBalance();
         double positiveValue = positiveBalance();
         return positiveValue - negativeValue;
@@ -63,7 +62,7 @@ public class AccountDao{
 
     public ArrayList<Account> all(){ return new ArrayList<>(accounts);}
 
-    public String formartCurrency(Double value) {
+    public String formatCurrency(Double value) {
         Locale brazil = new Locale("pt", "BR");
         NumberFormat brazilFormat = NumberFormat.getCurrencyInstance(brazil);
         return brazilFormat.format(value);
@@ -76,13 +75,11 @@ public class AccountDao{
             int psAccount = accounts.indexOf(findedAccount);
             accounts.set(psAccount, account);
             Log.i("Edit ", "FOI EDITADO");
-
         }
     }
 
     public void remove(Account account )
     {
-
         Account categoryAccount = searchAccount(account);
         if(categoryAccount != null){
             //findedCategory.getId(); ID PARA COLOCAR NO WHERE
@@ -91,12 +88,12 @@ public class AccountDao{
     }
 
     private Account searchAccount(Account account) {
-        Account findedAccount = null;
+        Account foundAccount = null;
         for(Account a: accounts){
             if(a.getId() == account.getId()){
                 return a;
             }
         }
-        return findedAccount;
+        return foundAccount;
     }
 }

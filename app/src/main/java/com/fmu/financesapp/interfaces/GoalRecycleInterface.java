@@ -3,7 +3,7 @@ package com.fmu.financesapp.interfaces;
 import java.util.HashMap;
 import java.util.Map;
 
-public interface GoalRycleInterface {
+public interface GoalRecycleInterface {
     Map<String, String> ICONMAP = new HashMap<String, String>() {{
         put("Alimentação", "ic_food");
         put("Educação", "ic_education");

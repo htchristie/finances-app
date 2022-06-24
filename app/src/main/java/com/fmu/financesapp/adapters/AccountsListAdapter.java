@@ -51,7 +51,6 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
         double currency  = accountList.get(position).getValue();
         holder.accountCategory.setText(category);
         formatConditionInformation(holder, typeImg, Double.toString(currency));
-
     }
 
     private void formatConditionInformation(@NonNull MyViewHolder holder, Boolean typeImg, String currencyFormat) {
